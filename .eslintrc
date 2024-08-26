@@ -1,0 +1,67 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+      "prettier",
+      "unused-imports",
+      "simple-import-sort",
+      "import",
+  ],
+  "rules": {
+      "prettier/prettier": [
+          "error",
+          {
+              "singleQuote": true
+          }
+      ]
+  },
+  "overrides": [
+      {
+          "files": ["**/*.ts", "**/*.tsx"],
+          "rules": {
+              "@typescript-eslint/no-var-requires": 0,
+              "@typescript-eslint/explicit-module-boundary-types": "off",
+              "prettier/prettier": "error",
+              "@typescript-eslint/no-explicit-any": "off",
+              "simple-import-sort/imports": "error",
+              "simple-import-sort/exports": "error",
+              "import/first": "error",
+              "import/newline-after-import": "error",
+              "import/no-duplicates": "error",
+              "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
+              "react/require-default-props": "off", // Allow non-defined react props as undefined
+              "react/jsx-props-no-spreading": "off", // _app.tsx uses spread operator and also, react-hook-form
+              "@typescript-eslint/comma-dangle": "off", // Avoid conflict rule between Eslint and Prettier
+              "import/prefer-default-export": "off", // Named export is easier to refactor automatically
+              "class-methods-use-this": "off", // _document.tsx use render method without `this` keyword
+              "@typescript-eslint/no-unused-vars": "off",
+              "unused-imports/no-unused-imports": "error",
+              "unused-imports/no-unused-vars": [
+                  "error",
+                  { "argsIgnorePattern": "^_" }
+              ],
+              "prefer-const": 0,
+              "react/self-closing-comp": [
+                  "error",
+                  {
+                      "component": true,
+                      "html": true
+                  }
+              ]
+          }
+      }
+  ],
+  "env": {
+      "node": true,
+      "browser": true,
+      "amd": true
+  },
+  "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:react/jsx-runtime",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended"
+  ]
+}
