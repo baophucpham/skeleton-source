@@ -1,10 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { authenReducer } from './authenReducer';
-import { connectRouter } from 'connected-react-router';
-const rootReducer = (history: any) =>
+const rootReducer = () =>
     combineReducers({
         authen: authenReducer,
-        router: connectRouter(history),
     });
 
 export { rootReducer };
