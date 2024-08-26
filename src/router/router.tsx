@@ -8,7 +8,7 @@ const routes = [
         main: () => <Login />,
     },
     {
-        path: '/',
+        path: '',
         exact: true,
         main: () => <PrivatePage />,
     },
