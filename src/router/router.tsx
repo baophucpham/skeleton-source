@@ -3,12 +3,12 @@ import PrivatePage from 'src/pages/privatePage';
 
 const routes = [
     {
-        path: '/',
+        path: '/login',
         exact: true,
         main: () => <Login />,
     },
     {
-        path: '',
+        path: '/privatePage',
         exact: true,
         main: () => <PrivatePage />,
     },

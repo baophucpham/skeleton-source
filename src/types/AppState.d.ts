@@ -1,7 +1,11 @@
-import { AuthenState } from "src/redux/reducers/authenReducer";
+import { AuthenState, AuthenCheckState } from "src/redux/reducers/authenReducer";
 
 export interface RootState {
   authen: AuthenState
+}
+
+export interface setAuth {
+  authCheck: AuthenCheckState 
 }
 
 export interface ResponseType<T> {

@@ -1,36 +1,156 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
-const LoginStyle = styled("div")`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .title {
-    font-size: 16px;
-  }
-  .imageBackground {
-    /* width: 70%; */
-    height: 900px;
-  }
-  .fromLogin {
-    width: 40%;
-    height: 900px;
-    background-color: #ffffff;
+const LoginStyle = styled('div')`
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .LogoIMG {
-    margin-bottom: 26px;
-  }
-  .titleLogin {
-    margin-bottom: 26px;
-  }
-  .inputStyle {
-    margin-bottom: 10px;
-  }
-  .userName {
-    margin-bottom: 10px;
-  }
+    @media screen and (max-width: 1024px) {
+        width: 100%;
+        height: 768px;
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        height: 1024px;
+    }
+    .title {
+        font-size: 16px;
+    }
+    .imageBackground {
+        width: 70%;
+        height: 100%;
+    }
+    .viewLogin {
+        width: 40%;
+        height: 100%;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 62px 98px 62px 98px;
+    }
+    .LogoIMG {
+        margin-bottom: 90px;
+    }
+    .titleLogin {
+        margin-bottom: 64px;
+        font-weight: 600;
+        font-size: 38px;
+        line-height: 45.6px;
+        color: #555555;
+    }
+    .custom-label .ant-form-item-label > label {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #4d5959;
+    }
+    .input {
+        width: 100%;
+        height: 65px;
+        border-radius: 0px;
+    }
+    .viewFromInput {
+        width: 100%;
+    }
+    .custom-btuton {
+        width: 100%;
+        height: 60px;
+        border-radius: 0px;
+        background-color: #006699;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 31.2px;
+    }
+    .checkBox {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+    .ant-form-item-label
+        > label.ant-form-item-required:not(
+            .ant-form-item-required-mark-optional
+        )::before {
+        display: none;
+    }
+    @media screen and (max-width: 768px) {
+        .imageBackground {
+            width: 60%;
+            height: 100%;
+        }
+        .viewLogin {
+            width: 40%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 45px 60px 55px;
+        }
+        .LogoIMG {
+            margin-bottom: 70px;
+        }
+        .titleLogin {
+            margin-bottom: 42px;
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 32.6px;
+            color: #555555;
+        }
+        .custom-label .ant-form-item-label > label {
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 20px;
+            color: #4d5959;
+        }
+        .input {
+            height: 50px;
+        }
+        .checkBox {
+            font-size: 10px;
+        }
+        .custom-btuton {
+            height: 40px;
+            font-size: 15px;
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        .imageBackground {
+            width: 60%;
+            height: 100%;
+        }
+        .viewLogin {
+            width: 40%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 45px 60px 55px;
+        }
+        .LogoIMG {
+            margin-bottom: 70px;
+        }
+        .titleLogin {
+            margin-bottom: 42px;
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 32.6px;
+            color: #555555;
+        }
+        .custom-label .ant-form-item-label > label {
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 20px;
+            color: #4d5959;
+        }
+        .input {
+            height: 50px;
+        }
+        .checkBox {
+            font-size: 10px;
+        }
+        .custom-btuton {
+            height: 40px;
+            font-size: 15px;
+        }
+    }
 `;
 export default LoginStyle;

@@ -1,18 +1,80 @@
-/* global.css */
-*, *::before, *::after {
+/* reset.css */
+* {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-}
-
-html {
   box-sizing: border-box;
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
 }
 
-body {
-  margin: 0;
+html, body {
+  height: 100%;
   font-family: Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.column {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Mobile (360x640) */
+@media (max-width: 640px) {
+  .main-content {
+      flex-direction: column;
+  }
+
+  .column {
+      width: 100%;
+  }
+}
+
+/* Tablet (768x1024) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .main-content {
+      flex-direction: row;
+  }
+
+  .column {
+      width: 50%;
+  }
+}
+
+/* Desktop (1920x1080) */
+@media (min-width: 1025px) {
+  .main-content {
+      flex-direction: row;
+  }
+
+  .column {
+      width: 25%;
+  }
 }
