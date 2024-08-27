@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import PrivatePageStyle from "./style";
+import { useSelector } from "react-redux";
+import { isAuthSelector } from "src/redux/selectors/authenSelector";
 
 const PrivatePage = () => {
+   const isAuthen = useSelector(isAuthSelector);
+   console.log(isAuthen);
   const naviLoginPage = () => {
     // navigate("/");
   };

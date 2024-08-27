@@ -1,10 +1,10 @@
-import React from 'react';
-import LoginStyle from './style';
-import images from '../../asset/image';
 import { Button, Checkbox, Form, FormProps, Input } from 'antd';
-import { useDispatch } from 'react-redux';
-import { auth_exited } from 'src/redux/actions/authenAction';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { auth_exited } from 'src/redux/actions/authenAction';
+import { isAuthSelector } from 'src/redux/selectors/authenSelector';
+import images from '../../asset/image';
+import LoginStyle from './style';
 
 type FieldType = {
     username?: string;
@@ -13,14 +13,15 @@ type FieldType = {
 };
 
 const Login = () => {
-  const dispatch = useDispatch();
-  const history = useHistory();
-
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const isAuthen = useSelector(isAuthSelector);
+    console.log(isAuthen);
 
     const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
         console.log('Success:', values);
-        dispatch(auth_exited(true))
-        history.push('/privatePage')
+        dispatch(auth_exited(true));
+        history.push('/privatePage');
     };
 
     const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (
@@ -86,7 +87,9 @@ const Login = () => {
                             name="remember"
                             valuePropName="checked"
                         >
-                            <Checkbox className="checkBox">Remember me</Checkbox>
+                            <Checkbox className="checkBox">
+                                Remember me
+                            </Checkbox>
                         </Form.Item>
                         <Form.Item className="custom-btuton">
                             <Button
