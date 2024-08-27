@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import App from './App';
+// import './global.scss'
 import './index.css';
 import store from './redux/store';
 const root = ReactDOM.createRoot(

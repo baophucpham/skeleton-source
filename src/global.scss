@@ -1,0 +1,44 @@
+@import 'assets/colors.scss';
+*{
+	box-sizing: border-box;
+}
+body {
+	font-family: Arial,
+		Helvetica,
+		Verdana,
+		sans-serif;
+	 width: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: $layout;
+}
+::-webkit-scrollbar {
+	overflow-y: scroll;
+	width: 8px;
+	height: 8px;
+}
+::-webkit-scrollbar-thumb{
+	background: $light-color;
+	border-radius: 8px;
+}
+a {
+	text-decoration: none;
+}
+.layout{
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	margin: 0;
+	background-color: $layout;
+}
+.main-container {
+	margin: auto;
+	width: 100%;
+	background-color: $layout;
+}
+@media (max-width: 768px) {
+	.main-container {
+			padding: 1rem;
+			background-color: $layout;
+		}
+}

@@ -1,80 +1,136 @@
-/* reset.css */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* font-size: 100%; */
+    /* font: inherit; */
+    vertical-align: baseline;
+    overflow: hidden;
 }
 
-html, body {
-  height: 100%;
-  font-family: Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+body {
+    line-height: 1;
 }
 
-ul, ol {
-  list-style: none;
+ol,
+ul {
+    list-style: none;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+blockquote,
+q {
+    quotes: none;
 }
 
-button {
-  background: none;
-  border: none;
-  cursor: pointer;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
 
-.main-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.column {
-  background-color: #f4f4f4;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Mobile (360x640) */
-@media (max-width: 640px) {
-  .main-content {
-      flex-direction: column;
-  }
-
-  .column {
-      width: 100%;
-  }
-}
-
-/* Tablet (768x1024) */
-@media (min-width: 641px) and (max-width: 1024px) {
-  .main-content {
-      flex-direction: row;
-  }
-
-  .column {
-      width: 50%;
-  }
-}
-
-/* Desktop (1920x1080) */
-@media (min-width: 1025px) {
-  .main-content {
-      flex-direction: row;
-  }
-
-  .column {
-      width: 25%;
-  }
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }

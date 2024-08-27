@@ -2,13 +2,17 @@ import styled from '@emotion/styled';
 
 const LoginStyle = styled('div')`
     display: flex;
+    width: 100%;
+    height: 100%;
     @media screen and (max-width: 1024px) {
         width: 100%;
         height: 768px;
+        overflow: hidden;
     }
     @media screen and (max-width: 768px) {
         width: 100%;
         height: 1024px;
+        overflow: hidden;
     }
     .title {
         font-size: 16px;

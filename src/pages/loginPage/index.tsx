@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { auth_exited } from 'src/redux/actions/authenAction';
 import { isAuthSelector } from 'src/redux/selectors/authenSelector';
-import images from '../../asset/image';
+import images from '../../assets/image';
 import LoginStyle from './style';
 
 type FieldType = {
