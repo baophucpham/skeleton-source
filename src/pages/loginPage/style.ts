@@ -22,7 +22,7 @@ const LoginStyle = styled('div')`
         height: 100%;
     }
     .viewLogin {
-        width: 40%;
+        width: 30%;
         height: 100%;
         background-color: #ffffff;
         display: flex;
@@ -63,6 +63,9 @@ const LoginStyle = styled('div')`
         font-size: 26px;
         line-height: 31.2px;
     }
+    .custom-btuton:hover {
+        background-color: #004195 !important;
+    }
     .checkBox {
         font-weight: 400;
         font-size: 16px;
@@ -73,6 +76,9 @@ const LoginStyle = styled('div')`
             .ant-form-item-required-mark-optional
         )::before {
         display: none;
+    }
+    .ant-form-item-control > div {
+        display: block !important;
     }
     @media screen and (max-width: 768px) {
         .imageBackground {

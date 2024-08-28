@@ -1,5 +1,5 @@
 import Login from 'src/pages/loginPage';
-import PrivatePage from 'src/pages/privatePage';
+import InformationPage from 'src/pages/InformationPage';
 
 const routes = [
     {
@@ -8,9 +8,9 @@ const routes = [
         main: () => <Login />,
     },
     {
-        path: '/privatePage',
+        path: '/informationPage',
         exact: true,
-        main: () => <PrivatePage />,
+        main: () => <InformationPage />,
     },
 ];
 

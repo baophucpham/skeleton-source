@@ -8,6 +8,13 @@ import App from './App';
 // import './global.scss'
 import './index.css';
 import store from './redux/store';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faMoneyBillWave, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+// add icon to libary
+library.add(faMoneyBillWave, faCoffee);
+
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement,
 );

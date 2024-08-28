@@ -1,28 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Login from './pages/loginPage';
-import PrivatePage from './pages/privatePage';
+import InformationPage from './pages/InformationPage';
 import ProtectedRoute from './router/protectedRoutes';
+import { useSelector } from 'react-redux';
+import { isAuthSelector } from './redux/selectors/authenSelector';
+import routes from './router/router';
 
 const App: React.FC = () => {
-    const [isAuth, setIsAuth] = useState(true);
-
-    useEffect(() => {
-        setIsAuth(true);
-    }, [isAuth]);
+    const isAuthen = useSelector(isAuthSelector);
+    console.log(isAuthen);
 
     return (
         <Switch>
             <Route exact path="/">
-                <Redirect to="/privatePage" />
+                <Redirect to="/informationPage" />
             </Route>
             <ProtectedRoute
-                path={'/privatePage'}
-                component={PrivatePage}
-                isAuthenticated={isAuth}
+                path={'/informationPage'}
+                component={InformationPage}
+                isAuthenticated={isAuthen}
             />
-            <Route path="/login" exact={true} component={Login} />
-            <Route path="/privatePage" exact={true} component={PrivatePage} />
+            {routes.length > 0 &&
+                routes.map((routes, index) => {
+                    return (
+                        <Route
+                            key={index}
+                            path={routes?.path}
+                            exact={routes?.exact}
+                            component={routes?.main}
+                        />
+                    );
+                })}
         </Switch>
     );
 };

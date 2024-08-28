@@ -21,7 +21,7 @@ const Login = () => {
     const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
         console.log('Success:', values);
         dispatch(auth_exited(true));
-        history.push('/privatePage');
+        history.push('/informationPage');
     };
 
     const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (
