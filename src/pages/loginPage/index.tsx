@@ -38,9 +38,10 @@ const Login = () => {
                 src={images.ygtBackgroundImage}
             />
             <div className="viewLogin">
-                <img alt="" className="LogoIMG" src={images.logoYGT} />
-                <div className="titleLogin">Document Portal Login</div>
-                <div className="viewFromInput">
+                <div className='groupsItemLogin'>
+                    <img alt="" className="LogoIMG" src={images.logoYGT} />
+                    <div className="titleLogin">Document Portal Login</div>
+                    <div className="viewFromInput">
                     <Form
                         name=""
                         style={{ maxWidth: 600 }}
@@ -101,6 +102,7 @@ const Login = () => {
                             </Button>
                         </Form.Item>
                     </Form>
+                    </div>
                 </div>
             </div>
         </LoginStyle>

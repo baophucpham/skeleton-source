@@ -18,6 +18,9 @@ const InformationPaymentStyle = styled('div')`
     }
     .contentSeller {
         width: 50%;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.2px;
     }
     .avatarSeller {
         width: 50%;
@@ -36,10 +39,10 @@ const InformationPaymentStyle = styled('div')`
         border-radius: 6px;
         background: #12b897;
     }
-    .btnPhoneCall:hover{
+    .btnPhoneCall:hover {
         background: #12b999 !important;
     }
-    .inforPayMent{
+    .inforPayMent {
         background-color: #ffffff;
         flex-shrink: 0;
         border-radius: 8px;
@@ -47,8 +50,23 @@ const InformationPaymentStyle = styled('div')`
         padding: 17px 20px 17px 20px;
         margin-bottom: 20px;
     }
-    .viewinforPayment{
-
+    .viewinforPayment {
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        line-height: 34.516px;
+    }
+    .price {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 16px;
+        margin-top: 27px;
+        border-top: 1px solid #dcdcdc;
+        font-size: 16px;
+        line-height: 34.516px;
+    }
+    .iconPlus {
+        cursor: pointer;
     }
 `;
 export default InformationPaymentStyle;

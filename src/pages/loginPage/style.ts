@@ -3,7 +3,9 @@ import styled from '@emotion/styled';
 const LoginStyle = styled('div')`
     display: flex;
     width: 100%;
-    height: 100%;
+    /* 
+    height: 100%; */
+    position: fixed;
     @media screen and (max-width: 1024px) {
         width: 100%;
         height: 768px;
@@ -18,25 +20,20 @@ const LoginStyle = styled('div')`
         font-size: 16px;
     }
     .imageBackground {
-        width: 70%;
-        height: 100%;
+        width: 60%;
     }
     .viewLogin {
-        width: 30%;
-        height: 100%;
+        width: 40%;
         background-color: #ffffff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         padding: 62px 98px 62px 98px;
     }
     .LogoIMG {
-        margin-bottom: 90px;
+        margin-bottom: 48px;
     }
     .titleLogin {
-        margin-bottom: 64px;
+        margin-bottom: 48px;
         font-weight: 600;
-        font-size: 38px;
+        font-size: 34px;
         line-height: 45.6px;
         color: #555555;
     }
@@ -53,6 +50,12 @@ const LoginStyle = styled('div')`
     }
     .viewFromInput {
         width: 100%;
+    }
+    .groupsItemLogin{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .custom-btuton {
         width: 100%;

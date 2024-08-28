@@ -23,11 +23,10 @@ const InformationPageStyle = styled('div')`
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-       
     }
     .viewPromotion {
-        width: 40%;
-        height: 60%;
+        width: 65%;
+        height: 64px;
         color: #0a987c;
         font-size: 21.333px;
         font-style: normal;
@@ -36,7 +35,8 @@ const InformationPageStyle = styled('div')`
         border-radius: 6.299px;
         border: 2.286px solid #12b897;
         background: rgba(18, 184, 151, 0.1);
-        padding: 20px 15px 20px 15px;
+        display: flex;
+        align-items: center;
     }
     .contentBtnPromotion {
         width: 100%;
@@ -64,21 +64,21 @@ const InformationPageStyle = styled('div')`
         font-weight: 500;
         line-height: 45.302px;
     }
-    .viewShowInfor{
+    .viewShowInfor {
         background: #fff;
         padding: 55px 129px 55px 129px;
         display: flex;
         justify-content: space-between;
     }
-    .viewInforLeft{
+    .viewInforLeft {
         width: 69%;
-        box-shadow: 4px 4px 20px 0px rgba(156, 171, 194, 0.4);
-        border-radius: 8px;
+        /* box-shadow: 4px 4px 20px 0px rgba(156, 171, 194, 0.4); */
+        /* border-radius: 8px; */
     }
-    .viewInforRight{
+    .viewInforRight {
         width: 30%;
-        box-shadow: 0px 0px 20px 0px rgba(156, 171, 194, 0.4);
-        border-radius: 8px;
+        /* box-shadow: 0px 0px 20px 0px rgba(156, 171, 194, 0.4); */
+        /* border-radius: 8px; */
     }
 `;
 export default InformationPageStyle;

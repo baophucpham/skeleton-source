@@ -3,8 +3,15 @@ import InformationPaymentStyle from './style';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faPhoneFlip } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'antd';
+import icons from 'src/asset/icon';
 
 const InforPaymentCompoment = () => {
+    const arrGroup = [
+        { id: 1, nameGroup: 'Group A (price per person)', price: '£199' },
+        { id: 2, nameGroup: 'Group B (price per person)', price: '£199' },
+        { id: 3, nameGroup: 'Group C (price per person)', price: '£199' },
+    ];
+
     return (
         <InformationPaymentStyle>
             <div className="inforSeller">
@@ -33,16 +40,29 @@ const InforPaymentCompoment = () => {
                 </Button>
             </div>
             <div className="inforPayMent">
-                <div className="viewinforPayment">
+                <div>
+                    {arrGroup.map((item, index) => {
+                        return (
+                            <div key={index} className="viewinforPayment">
+                                <div>{item?.nameGroup}</div>
+                                <div>{item?.price}</div>
+                                <img
+                                    alt=""
+                                    className="iconPlus"
+                                    src={icons.plusIcon}
+                                />
+                            </div>
+                        );
+                    })}
+                </div>
+                <div className='price'>
                     <div>
-                        <div>adsfdsf</div>
-                        <div>hjgfjghghjhj</div>
-                        <div>hjgfjghghjhj</div>
+                        <div>Total price</div>
+                        <div>Total Deposit</div>
                     </div>
                     <div>
-                        <div>adsfdsf</div>
-                        <div>hjgfjghghjhj</div>
-                        <div>hjgfjghghjhj</div>
+                        <div>£1,494</div>
+                        <div>£1,494</div>
                     </div>
                 </div>
             </div>
