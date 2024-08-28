@@ -5,7 +5,6 @@ const InformationPageStyle = styled('div')`
     flex-direction: column;
     background: #f2f2f2;
     height: 1080px;
-    overflow-y: auto;
     @media screen and (max-width: 1024px) {
         width: 100%;
     }

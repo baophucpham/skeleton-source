@@ -1,7 +1,7 @@
 import React from 'react';
 import InformationPaymentStyle from './style';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUser, faPhoneFlip } from '@fortawesome/free-solid-svg-icons';
+import { faCircleUser, faDownload, faPhoneFlip, faShareNodes } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'antd';
 import icons from 'src/asset/icon';
 
@@ -45,7 +45,7 @@ const InforPaymentCompoment = () => {
                         return (
                             <div key={index} className="viewinforPayment">
                                 <div>{item?.nameGroup}</div>
-                                <div>{item?.price}</div>
+                                <div className="numGroups">{item?.price}</div>
                                 <img
                                     alt=""
                                     className="iconPlus"
@@ -55,16 +55,33 @@ const InforPaymentCompoment = () => {
                         );
                     })}
                 </div>
-                <div className='price'>
-                    <div>
-                        <div>Total price</div>
-                        <div>Total Deposit</div>
+                <div className="price">
+                    <div className="viewPrice">
+                        <div className="totalPrice">Total price</div>
+                        <div className="numTotalPrice">£1,494</div>
                     </div>
-                    <div>
-                        <div>£1,494</div>
-                        <div>£1,494</div>
+                    <div className="viewPrice">
+                        <div className="totalDeposit">Total Deposit</div>
+                        <div className="numTotalDeposit">£1,494</div>
                     </div>
                 </div>
+            </div>
+            <div className="inforPayMent">
+                <div className="contentNavigte">
+                    Introduction from your Golf Travel Expert
+                </div>
+                <div className="contentNavigte">See itinerary in detail </div>
+                <div className="contentNavigte">Pricing and booking </div>
+                <div className="contentNavigte">Important information</div>
+                <div className="contentNavigte">Terms & conditions </div>
+            </div>
+            <div className='groupsBtn'>
+                <Button type="primary" className="btnDownload" ghost>
+                    Download PDF <FontAwesomeIcon icon={faDownload} />
+                </Button>
+                <Button type="primary" className="btnShare" ghost>
+                    Share Quote <FontAwesomeIcon icon={faShareNodes} />
+                </Button>
             </div>
         </InformationPaymentStyle>
     );

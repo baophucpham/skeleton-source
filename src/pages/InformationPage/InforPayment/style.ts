@@ -57,8 +57,6 @@ const InformationPaymentStyle = styled('div')`
         line-height: 34.516px;
     }
     .price {
-        display: flex;
-        justify-content: space-between;
         padding-top: 16px;
         margin-top: 27px;
         border-top: 1px solid #dcdcdc;
@@ -68,5 +66,84 @@ const InformationPaymentStyle = styled('div')`
     .iconPlus {
         cursor: pointer;
     }
+    .iconPlus:hover {
+        transform: scale(1.05);
+    }
+    .totalPrice {
+        font-size: 18.657px;
+        font-weight: 700;
+        line-height: 34px;
+    }
+    .totalDeposit {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 21.456px;
+    }
+    .viewPrice {
+        display: flex;
+        justify-content: space-between;
+    }
+    .numTotalPrice {
+        font-size: 22.389px;
+        font-weight: 900;
+    }
+    .totalDeposit {
+        font-size: 16px;
+        font-weight: 900;
+    }
+    .numGroups {
+        font-size: 16px;
+        font-weight: 900;
+    }
+    .contentNavigte {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 34px;
+        text-decoration-line: underline;
+        color: #1a91ff;
+        cursor: pointer;
+    }
+    .contentNavigte:hover {
+        transform: scale(1.05);
+    }
+    .groupsBtn {
+        display: flex;
+        flex-direction: column;
+    }
+    .btnDownload {
+        color: #12b897;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 17.867px;
+        border-radius: 6px;
+        border: 2px solid #12b897;
+        margin-bottom: 13px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+    .btnDownload:hover{
+        color: #12b897 !important;
+        border-radius: 6px !important;
+        border: 2px solid #12b897 !important;
+    }
+    .btnShare {
+        color: #12b897;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 17.867px;
+        border-radius: 6px;
+        border: 2px solid #12b897;
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+    .btnShare{
+        color: #12b897 !important;
+        border-radius: 6px !important;
+        border: 2px solid #12b897 !important;
+    }
 `;
+
 export default InformationPaymentStyle;

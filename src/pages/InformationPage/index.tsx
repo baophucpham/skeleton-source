@@ -7,7 +7,7 @@ import images from 'src/assets/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoneyBillWave } from '@fortawesome/free-solid-svg-icons';
 import InforPaymentCompoment from './InforPayment';
-
+import IntroductionGoflTravel from './IntroductionGolfTravel';
 
 const InformationPage = () => {
     const history = useHistory();
@@ -18,11 +18,11 @@ const InformationPage = () => {
     };
     return (
         <InformationPageStyle>
-            <div className="headerPage" onClick={() => naviLoginPage()}>
-                <div className="logoHeader">
+            <div className="headerPage">
+                <div className="logoHeader" onClick={() => naviLoginPage()}>
                     <img alt="" className="LogoIMG" src={images.logoYGT} />
                 </div>
-                <div className="viewPromotion">
+                <div className="viewPromotion" onClick={() => naviLoginPage()}>
                     <div className="contentBtnPromotion">
                         <p>Promo: £10 OFF when you book today</p>
                         <FontAwesomeIcon icon={faMoneyBillWave} />
@@ -38,10 +38,11 @@ const InformationPage = () => {
                 </div>
             </div>
             <div className="viewShowInfor">
-                <div className='viewInforLeft'>kbkhj</div>
-                <div className='viewInforRight'><InforPaymentCompoment/></div>
+                <div className="viewInforLeft"><IntroductionGoflTravel/></div>
+                <div className="viewInforRight">
+                    <InforPaymentCompoment />
+                </div>
             </div>
-            
         </InformationPageStyle>
     );
 };
