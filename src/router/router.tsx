@@ -1,5 +1,5 @@
 import Login from 'src/pages/loginPage';
-import InformationPage from 'src/pages/InformationPage';
+import QuoteDetailPage from 'src/pages/QuoteDetailPage';
 
 const routes = [
     {
@@ -8,9 +8,9 @@ const routes = [
         main: () => <Login />,
     },
     {
-        path: '/informationPage',
+        path: '/quoteDetail',
         exact: true,
-        main: () => <InformationPage />,
+        main: () => <QuoteDetailPage />,
     },
 ];
 

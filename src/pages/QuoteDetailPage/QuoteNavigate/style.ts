@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-const InformationPaymentStyle = styled('div')`
+const QouteNavigateStyle = styled('div')`
     width: 100%;
 
     .inforSeller {
@@ -103,6 +103,22 @@ const InformationPaymentStyle = styled('div')`
         text-decoration-line: underline;
         color: #1a91ff;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+    .contentNavigteFocus {
+        color: #000;
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 34px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+    .arrowLeft{
+        margin-right: 5px;
     }
     .contentNavigte:hover {
         transform: scale(1.05);
@@ -123,7 +139,7 @@ const InformationPaymentStyle = styled('div')`
         padding-top: 18px;
         padding-bottom: 18px;
     }
-    .btnDownload:hover{
+    .btnDownload:hover {
         color: #12b897 !important;
         border-radius: 6px !important;
         border: 2px solid #12b897 !important;
@@ -139,11 +155,11 @@ const InformationPaymentStyle = styled('div')`
         padding-top: 18px;
         padding-bottom: 18px;
     }
-    .btnShare{
+    .btnShare {
         color: #12b897 !important;
         border-radius: 6px !important;
         border: 2px solid #12b897 !important;
     }
 `;
 
-export default InformationPaymentStyle;
+export default QouteNavigateStyle;

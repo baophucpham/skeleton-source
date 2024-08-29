@@ -1,46 +1,13 @@
 import React from 'react';
 import IntroductionGoflTravelStyle from './style';
-import images from 'src/asset/image';
-import icons from 'src/asset/icon';
-import { Carousel } from 'antd';
+import images from 'src/assets/image';
+import icons from 'src/assets/icon';
+import Carousel from 'src/components/carouselCustom';
+import { arrCaurosel, arrWhyContent } from 'src/const/enum';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 
 const IntroductionGoflTravel = () => {
-    const arrWhyContent = [
-        {
-            id: 1,
-            icon: `${icons.golfTravelExpert}`,
-            title: 'Golf Travel Experts',
-            discription:
-                'A dedicated expert in your chosen destination as standard',
-        },
-        {
-            id: 2,
-            icon: `${icons.bestPriceGuaranteed}`,
-            title: 'Best Price Guaranteed',
-            discription:
-                'Value you can trust and payment options you can rely on.',
-        },
-        {
-            id: 3,
-            icon: `${icons.unbeatableChoice}`,
-            title: 'Unbeatable Choice',
-            discription: '3500+ destinations in 24 countries chosen for you.',
-        },
-        {
-            id: 4,
-            icon: `${icons.industryLeadingProtection}`,
-            title: 'Industry leading Protection ',
-            discription: 'ABTOT & ATOL safeguards for greater peace of mind.',
-        },
-    ];
-    const contentStyle: React.CSSProperties = {
-        margin: 0,
-        height: '160px',
-        color: 'black',
-        lineHeight: '160px',
-        textAlign: 'center',
-        background: '#fff',
-    };
     return (
         <IntroductionGoflTravelStyle>
             <img alt="" className="imgGoflTravel" src={images.golfView} />
@@ -91,38 +58,26 @@ const IntroductionGoflTravel = () => {
             </div>
             <div className="carouselView">
                 <div className="titleWhyContent">What our golfers say</div>
-                <Carousel
-                    arrows
-                    infinite={false}
-                    nextArrow={
-                        <img
-                            alt=""
-                            className="arrowStep"
-                            style={{ fontSize: '32.987px' }}
-                            src={icons.rightArrow}
-                        />
-                    }
-                    prevArrow={
-                        <img
-                            alt=""
-                            className="arrowStep"
-                            style={{ fontSize: '32.987px' }}
-                            src={icons.leftArrow}
-                        />
-                    }
-                >
-                    <div>
-                        <h3 style={contentStyle}>1</h3>
-                    </div>
-                    <div>
-                        <h3 style={contentStyle}>2</h3>
-                    </div>
-                    <div>
-                        <h3 style={contentStyle}>3</h3>
-                    </div>
-                    <div>
-                        <h3 style={contentStyle}>4</h3>
-                    </div>
+                <Carousel itemsToShow={2}>
+                    {arrCaurosel.map((item, index) => {
+                        return (
+                            <div className="viewItemCarousel" key={index}>
+                                <div className="titleItemCarousel">
+                                    <div className="pointCarousel">
+                                        {item.piont}
+                                    </div>
+                                    <div className="commentCarousel">
+                                        {item.comment}
+                                    </div>
+                                </div>
+                                <div className="discriptionCarousel">
+                                    {item.disciption}{' '}
+                                    <img alt="" src={icons.qouteRight} />
+                                </div>
+                                <div className="SignCarousel">{item.sign}</div>
+                            </div>
+                        );
+                    })}
                 </Carousel>
             </div>
             <div className="carouselView">
@@ -142,7 +97,38 @@ const IntroductionGoflTravel = () => {
                 </div>
             </div>
             <div className="endView">
-            <div className="titleWhyContent">About <span className='nameSeller'>Oliver Gunning </span> - Your UK & Ireland Golf Travel Expert</div>
+                <div className="titleWhyContent">
+                    About <span className="nameSeller">Oliver Gunning </span> -
+                    Your UK & Ireland Golf Travel Expert
+                </div>
+                <div className="viewEnd">
+                    <div className="commentSeller">
+                        {`I’m a keen golfer and proud to play off scratch. I
+                        enjoyed my first round with my grandad at 6 years old
+                        and was instantly bitten by the golfing bug. Since then
+                        I’ve been lucky enough to play in 12 countries. My ideal
+                        golf holiday is a sunny afternoon at Gleneagles with
+                        some good mates, followed by a pint of Guinness. I love
+                        helping golfers find their perfect trip, so get in
+                        touch, and I’ll get you on the fairways.`}
+                    </div>
+                    <div className="avatarSignView">
+                        <div className="avatarSeller">
+                            <FontAwesomeIcon
+                                className="avatar"
+                                icon={faCircleUser}
+                            />
+                        </div>
+                        <div className='signEnd'>
+                            <div>O.Gunning</div>
+                            <div>
+                                <div className='phone'>0207 336 5340</div>
+                                <div className='email'>oliverg@yourgolftravel.com</div>
+                                <div>Handicap - 0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </IntroductionGoflTravelStyle>
     );

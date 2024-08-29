@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-const InformationPageStyle = styled('div')`
+const QuoteDetailPageStyle = styled('div')`
     display: flex;
     flex-direction: column;
     background: #f2f2f2;
@@ -71,13 +71,9 @@ const InformationPageStyle = styled('div')`
     }
     .viewInforLeft {
         width: 69%;
-        /* box-shadow: 4px 4px 20px 0px rgba(156, 171, 194, 0.4); */
-        /* border-radius: 8px; */
     }
     .viewInforRight {
         width: 30%;
-        /* box-shadow: 0px 0px 20px 0px rgba(156, 171, 194, 0.4); */
-        /* border-radius: 8px; */
     }
 `;
-export default InformationPageStyle;
+export default QuoteDetailPageStyle;

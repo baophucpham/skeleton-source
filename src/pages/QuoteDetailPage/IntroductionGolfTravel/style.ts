@@ -44,6 +44,7 @@ const IntroductionGoflTravelStyle = styled('div')`
         font-style: normal;
         font-weight: 700;
         line-height: 28.125px;
+        margin-bottom: 23px;
     }
     .showItemWhy {
         display: flex;
@@ -74,23 +75,106 @@ const IntroductionGoflTravelStyle = styled('div')`
         width: 32.987px !important;
         height: 34.152px !important;
     }
-    .carouselView{
+    .carouselView {
         margin-top: 23px;
         border-bottom: 1px solid #dcdcdc;
         padding-bottom: 48px;
     }
-    .showItemStep{
+    .showItemStep {
         display: flex;
         margin-top: 35px;
         justify-content: space-between;
         padding-bottom: 42px;
     }
-    .endView{
+    .endView {
         margin-top: 23px;
         padding-bottom: 48px;
     }
-    .nameSeller{
-        color: #12B897;
+    .nameSeller {
+        color: #12b897;
+    }
+    .viewItemCarousel {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    .titleItemCarousel {
+        display: flex;
+        margin-bottom: 11px;
+        align-items: center;
+    }
+    .pointCarousel {
+        border-radius: 4px;
+        background: #12b897;
+        padding: 5px 10px 5px 10px;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 22px;
+        margin-right: 13px;
+    }
+    .commentCarousel {
+        color: #000;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 22px;
+    }
+    .discriptionCarousel {
+        color: var(--Gray-2, #4f4f4f);
+        font-size: 16.071px;
+        font-weight: 400;
+        line-height: 22.098px;
+    }
+    .SignCarousel {
+        font-size: 16.071px;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 22.098px;
+    }
+    .avatarSeller {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .avatar {
+        width: 87.065px;
+        height: 89px;
+        color: #12b897;
+    }
+    .avatarSignView {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .commentSeller {
+        width: 50%;
+    }
+    .signEnd {
+        width: 50%;
+        text-align: end;
+        color: #454545;
+        font-size: 14.062px;
+        font-weight: 900;
+        line-height: 145%;
+    }
+    .viewEnd {
+        display: flex;
+    }
+    .phone {
+        color: #454545;
+        font-size: 14.062px;
+        font-weight: 900;
+        line-height: 20.391px;
+    }
+    .email {
+        color: #12b897;
+        font-size: 14.062px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 20px;
+        text-decoration-line: underline;
     }
 `;
 

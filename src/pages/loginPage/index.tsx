@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { auth_exited } from 'src/redux/actions/authenAction';
 import { isAuthSelector } from 'src/redux/selectors/authenSelector';
-import images from '../../assets/image';
+
 import LoginStyle from './style';
+import images from 'src/assets/image';
 
 type FieldType = {
     username?: string;
@@ -16,12 +17,10 @@ const Login = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const isAuthen = useSelector(isAuthSelector);
-    console.log(isAuthen);
 
     const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-        console.log('Success:', values);
         dispatch(auth_exited(true));
-        history.push('/informationPage');
+        history.push('/quoteDetail');
     };
 
     const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (
