@@ -18,15 +18,9 @@ const Login = () => {
     const history = useHistory();
     const isAuthen = useSelector(isAuthSelector);
 
-    const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-        dispatch(auth_exited(true));
-        history.push('/quoteDetail');
-    };
-
-    const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (
-        errorInfo,
-    ) => {
-        console.log('Failed:', errorInfo);
+    const onFinish = () => {
+        dispatch(auth_exited(isAuthen));
+        history.push('/dashboard');
     };
 
     return (
@@ -37,70 +31,17 @@ const Login = () => {
                 src={images.ygtBackgroundImage}
             />
             <div className="viewLogin">
-                <div className='groupsItemLogin'>
+                <div className="groupsItemLogin">
                     <img alt="" className="LogoIMG" src={images.logoYGT} />
                     <div className="titleLogin">Document Portal Login</div>
                     <div className="viewFromInput">
-                    <Form
-                        name=""
-                        style={{ maxWidth: 600 }}
-                        initialValues={{ remember: false }}
-                        layout="vertical"
-                        onFinish={onFinish}
-                        onFinishFailed={onFinishFailed}
-                        autoComplete="off"
-                    >
-                        <Form.Item<FieldType>
-                            label="Email or Username"
-                            name="username"
-                            className="custom-label"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input your username!',
-                                },
-                            ]}
+                        <Button
+                            className="custom-btuton"
+                            type="primary"
+                            onClick={() => onFinish()}
                         >
-                            <Input
-                                className="input"
-                                placeholder="Email or Username"
-                            />
-                        </Form.Item>
-                        <Form.Item<FieldType>
-                            label="Password"
-                            name="password"
-                            className="custom-label"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input your password!',
-                                },
-                            ]}
-                        >
-                            <Input.Password
-                                className="input"
-                                placeholder="Password"
-                                iconRender={(visible) => null}
-                            />
-                        </Form.Item>
-                        <Form.Item<FieldType>
-                            name="remember"
-                            valuePropName="checked"
-                        >
-                            <Checkbox className="checkBox">
-                                Remember me
-                            </Checkbox>
-                        </Form.Item>
-                        <Form.Item className="custom-btuton">
-                            <Button
-                                className="custom-btuton"
-                                type="primary"
-                                htmlType="submit"
-                            >
-                                Login
-                            </Button>
-                        </Form.Item>
-                    </Form>
+                            Login with SSO
+                        </Button>
                     </div>
                 </div>
             </div>

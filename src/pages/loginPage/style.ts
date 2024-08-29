@@ -25,7 +25,7 @@ const LoginStyle = styled('div')`
     .viewLogin {
         width: 40%;
         background-color: #ffffff;
-        padding: 62px 98px 62px 98px;
+        padding: 190px 98px 62px 98px;
     }
     .LogoIMG {
         margin-bottom: 48px;
@@ -69,20 +69,6 @@ const LoginStyle = styled('div')`
     .custom-btuton:hover {
         background-color: #004195 !important;
     }
-    .checkBox {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19.2px;
-    }
-    .ant-form-item-label
-        > label.ant-form-item-required:not(
-            .ant-form-item-required-mark-optional
-        )::before {
-        display: none;
-    }
-    .ant-form-item-control > div {
-        display: block !important;
-    }
     @media screen and (max-width: 768px) {
         .imageBackground {
             width: 60%;
@@ -106,22 +92,6 @@ const LoginStyle = styled('div')`
             font-size: 17px;
             line-height: 32.6px;
             color: #555555;
-        }
-        .custom-label .ant-form-item-label > label {
-            font-weight: 500;
-            font-size: 10px;
-            line-height: 20px;
-            color: #4d5959;
-        }
-        .input {
-            height: 50px;
-        }
-        .checkBox {
-            font-size: 10px;
-        }
-        .custom-btuton {
-            height: 40px;
-            font-size: 15px;
         }
     }
     @media screen and (max-width: 1024px) {
@@ -147,18 +117,6 @@ const LoginStyle = styled('div')`
             font-size: 17px;
             line-height: 32.6px;
             color: #555555;
-        }
-        .custom-label .ant-form-item-label > label {
-            font-weight: 500;
-            font-size: 10px;
-            line-height: 20px;
-            color: #4d5959;
-        }
-        .input {
-            height: 50px;
-        }
-        .checkBox {
-            font-size: 10px;
         }
         .custom-btuton {
             height: 40px;
