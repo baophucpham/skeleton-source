@@ -1,10 +1,13 @@
 import styled from '@emotion/styled';
+import images from 'src/assets/image';
 
 const LoginStyle = styled('div')`
     display: flex;
     width: 100%;
-    /* 
-    height: 100%; */
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-image: url(${images.ygtBackgroundImage});
     position: fixed;
     @media screen and (max-width: 1024px) {
         width: 100%;
@@ -25,7 +28,7 @@ const LoginStyle = styled('div')`
     .viewLogin {
         width: 40%;
         background-color: #ffffff;
-        padding: 190px 98px 62px 98px;
+        padding: 100px 40px 100px 40px;
     }
     .LogoIMG {
         margin-bottom: 48px;

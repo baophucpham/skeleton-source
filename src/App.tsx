@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { isAuthSelector } from './redux/selectors/authenSelector';
 import routes from './router/router';
 import QuoteDetailPage from './pages/QuoteDetailPage';
+import DashboardComponent from './pages/Dashboard';
 
 const App: React.FC = () => {
     const isAuthen = useSelector(isAuthSelector);
@@ -13,11 +14,11 @@ const App: React.FC = () => {
     return (
         <Switch>
             <Route exact path="/">
-                <Redirect to="/quoteDetail" />
+                <Redirect to="/dashboard" />
             </Route>
             <ProtectedRoute
-                path={'/quoteDetail'}
-                component={QuoteDetailPage}
+                path={'/dashboard'}
+                component={DashboardComponent}
                 isAuthenticated={isAuthen}
             />
             {routes.length > 0 &&

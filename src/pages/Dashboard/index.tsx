@@ -4,15 +4,20 @@ import images from 'src/assets/image';
 import icons from 'src/assets/icon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
-import { Table } from 'antd';
-import { columns, dataSource } from 'src/const/enum';
+import { useHistory } from 'react-router-dom';
+import ViewTableComponent from './listQuotesComponent/index';
 
 const DashboardComponent = () => {
+    const history = useHistory();
+
+    const onFinish = () => {
+        history.push('/quoteDetail');
+    };
     return (
         <DashboardStyle>
             <div className="menuDashboard">
                 <img alt="" className="LogoIMG" src={images.logoYGT} />
-                <div className="btnQuotes">
+                <div className="btnQuotes" onClick={() => onFinish()}>
                     <img alt="" className="iconfile" src={icons.iconFile} />
                     <div>Quotes</div>
                     <img alt="" className="iconfile" src={icons.arrowRight} />
@@ -29,11 +34,7 @@ const DashboardComponent = () => {
             <div className="tableDashboard">
                 <div className="showNameSeller">Hi Amanda</div>
                 <div className="table">
-                    <Table
-                        dataSource={dataSource}
-                        columns={columns}
-                        pagination={{ pageSize: 7 }}
-                    />
+                    <ViewTableComponent/>
                 </div>
             </div>
         </DashboardStyle>

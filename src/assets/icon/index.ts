@@ -12,5 +12,10 @@ const icons = {
     iconFile: require('./icon-file.svg').default,
     arrowRight: require('./angle-right.svg').default,
     arrowDown: require('./arrow-down.svg').default,
+    shareLink: require('./sharelink-icon.svg').default,
+    download: require('./download-icon.svg').default,
+    clockIcon: require('./clock-icon.svg').default,
+    searchIcon: require('./search-icon.svg').default,
+    stateLayer: require('./state-layer.svg').default,
 };
 export default icons;

@@ -18,6 +18,7 @@ const DashboardStyle = styled('div')`
     }
     .tableDashboard {
         padding: 49px 64px 49px 64px;
+        overflow-x: auto;
     }
     .LogoIMG {
         width: 150px;
@@ -67,5 +68,28 @@ const DashboardStyle = styled('div')`
         box-shadow: 4px 4px 20px 0px rgba(156, 171, 194, 0.4);
         padding: 24px;
     }
+    .ant-table-thead th {
+        background-color: #12b897 !important;
+        color: white !important;
+        font-weight: bold;
+        text-align: center;
+    }
+    .ant-table-thead .ant-table-cell {
+        border-radius: 0px !important;
+    }
+   
+    .quoteTitleColumn {
+        width: 450px;
+    }
+    .quoteRefColumn {
+        width: 13%;
+    }
+    .clientNameColumn {
+        width: 13%;
+    }
+    .departureDateColumn {
+        width: 13%;
+    }
+   
 `;
 export default DashboardStyle;

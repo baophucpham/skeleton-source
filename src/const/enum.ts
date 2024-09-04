@@ -162,43 +162,23 @@ export const nameView = {
     TERM_AND_CONDITION: 5,
 };
 
-export const columns = [
-    {
-        title: 'Quote Ref',
-        dataIndex: 'quoteRef',
-        key: 'quoteRef',
-    },
-    {
-        title: 'Quote Title',
-        dataIndex: 'quoteTitle',
-        key: 'quoteTitle',
-    },
-    {
-        title: 'Departure date',
-        dataIndex: 'departureDate',
-        key: 'departureDate',
-    },
-    {
-        title: 'Client Name',
-        dataIndex: 'clientName',
-        key: 'clientName',
-    },
-    {
-        title: 'Status',
-        dataIndex: 'status',
-        key: 'status',
-    },
-    {
-        title: 'Version',
-        dataIndex: 'version',
-        key: 'version',
-    },
-    {
-        title: 'Action',
-        dataIndex: 'action',
-        key: 'action',
-    },
+export const showColumOnPage = [
+    { key: '1', label: '5' },
+    { key: '1', label: '10' },
+    { key: '1', label: '20' },
 ];
+
+export const listSearch =[
+    { key: '1', label: 'By Quote Ref' },
+    { key: '1', label: 'By Client Name' },
+    { key: '1', label: 'By Quote Title' },
+]
+
+export const listSort =[
+    { key: '1', label: 'Newest' },
+    { key: '1', label: 'Created date' },
+    { key: '1', label: 'Updated date' },
+]
 
 export const dataSource = [
     {
