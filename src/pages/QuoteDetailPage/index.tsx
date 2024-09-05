@@ -48,7 +48,9 @@ const QuoteDetailPage = () => {
                 </div>
                 <div className="titleview">{childData.content}</div>
             </div>
-            {childData.id === nameView.PRICING_AND_BOOKING && (
+            {(childData.id === nameView.PRICING_AND_BOOKING ||
+                childData.id === nameView.IMPORTANT_INFORMATION ||
+                childData.id === nameView.TERM_AND_CONDITION) && (
                 <div className="viewShowImage">
                     <img alt="" className="imageGoft" src={images.imageGoft} />
                 </div>

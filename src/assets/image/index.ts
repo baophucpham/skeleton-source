@@ -5,6 +5,7 @@ const images = {
     hotelImage: require('./the-belfry-3 1.png'),
     notFound: require('./not-found-img.svg').default,
     hotelImgFull: require('./the-belfry-4.png'),
-    imageGoft: require('./img-gofl.png')
+    imageGoft: require('./img-gofl.png'),
+    awardGoflLogo:  require('./award-gofl-logo.png')
 }
 export default images;
