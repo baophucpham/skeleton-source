@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ItineraryInDetailStyle from './style';
 import { dataItineraryInDetail } from 'src/const/enum';
 import images from 'src/assets/image';
 import icons from 'src/assets/icon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
+import ModalComponent from 'src/components/modalCustom';
+import ModalTouristDetination from './ModalTouristDestination';
 
 const ItineraryInDetailComponent = () => {
-    console.log(dataItineraryInDetail, 'dataItineraryInDetail');
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleClose = () => {
+        setIsModalVisible(false);
+    };
     return (
         <ItineraryInDetailStyle>
             <div className="titleDay1">Day 1: Mon 5th August 2024</div>
@@ -43,7 +53,9 @@ const ItineraryInDetailComponent = () => {
                         className="iconHotelorGolf"
                         src={icons.hotelIcon}
                     />
-                    <div className="btnSeeDetail">See details</div>
+                    <div className="btnSeeDetail" onClick={() => showModal()}>
+                        See details
+                    </div>
                 </div>
             </div>
             <div className="reviewSeller">
@@ -87,7 +99,9 @@ const ItineraryInDetailComponent = () => {
                         className="iconHotelorGolf"
                         src={icons.hotelIcon}
                     />
-                    <div className="btnSeeDetail">See details</div>
+                    <div className="btnSeeDetail" onClick={() => showModal()}>
+                        See details
+                    </div>
                 </div>
             </div>
             {/*  */}
@@ -125,7 +139,9 @@ const ItineraryInDetailComponent = () => {
                         className="iconHotelorGolf"
                         src={icons.hotelIcon}
                     />
-                    <div className="btnSeeDetail">See details</div>
+                    <div className="btnSeeDetail" onClick={() => showModal()}>
+                        See details
+                    </div>
                 </div>
             </div>
             <div className="reviewSeller">
@@ -169,9 +185,18 @@ const ItineraryInDetailComponent = () => {
                         className="iconHotelorGolf"
                         src={icons.hotelIcon}
                     />
-                    <div className="btnSeeDetail">See details</div>
+                    <div className="btnSeeDetail" onClick={() => showModal()}>
+                        See details
+                    </div>
                 </div>
             </div>
+            <ModalComponent
+                width={525}
+                visible={isModalVisible}
+                onClose={handleClose}
+                title="Stay at The Belfry"
+                content={<ModalTouristDetination />}
+            />
         </ItineraryInDetailStyle>
     );
 };

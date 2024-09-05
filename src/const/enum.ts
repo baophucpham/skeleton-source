@@ -382,3 +382,31 @@ export const dataSource = [
         action: 'delete'
     },
 ];
+
+
+export const dataVersion = [
+    {
+        key: '1',
+        quoteTitle:'Gunning Group’s Belfry Golf Trip',
+        departureDate: 'Sep 1 2024',
+        version: 'V1',
+        vertionDetail:'Updated intro text with ball offer',
+        versionStatus:'sent',
+    },
+    {
+        key: '2',
+        quoteTitle:'Gunning Group’s Belfry Golf Trip',
+        departureDate: 'Sep 1 2024',
+        version: 'V2',
+        vertionDetail:'Tee time changes at Derby',
+        versionStatus:'Draft',
+    },
+    {
+        key: '3',
+        quoteTitle:'Gunning Group’s Belfry Golf Trip',
+        departureDate: 'Sep 1 2024',
+        version: 'V3',
+        vertionDetail:'Updated intro text with ball offer',
+        versionStatus:'sent',
+    },
+];

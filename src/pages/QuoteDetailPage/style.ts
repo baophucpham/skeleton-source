@@ -69,11 +69,22 @@ const QuoteDetailPageStyle = styled('div')`
         display: flex;
         justify-content: space-between;
     }
+    .viewShowImage{
+        background: #fff;
+        padding: 55px 129px 0px 129px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .viewInforLeft {
         width: 69%;
     }
     .viewInforRight {
         width: 30%;
+    }
+    .imageGoft{
+        width: 100%;
+        border-radius: 6px;
     }
 `;
 export default QuoteDetailPageStyle;

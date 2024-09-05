@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ListQuotesComponent from './style';
 import DropdownCustom from 'src/components/dropdownCustom';
-import { Button, Input, Modal, Popover, Table } from 'antd';
+import { Input, Popover, Table } from 'antd';
 import icons from 'src/assets/icon';
 import {
     dataSource,
@@ -10,13 +10,19 @@ import {
     showColumOnPage,
 } from 'src/const/enum';
 import ModalComponent from 'src/components/modalCustom';
+import VersionModal from './VersionModal';
+import NotFound from '../../../components/NotFoundData';
 
 const ViewTableComponent = () => {
     const [page, setPage] = useState<number>(5);
-    const [open, setOpen] = useState<boolean>(false)
+    const [isModalVisible, setIsModalVisible] = useState(false);
 
     const showModal = () => {
-        setOpen(!open);
+        setIsModalVisible(true);
+    };
+
+    const handleClose = () => {
+        setIsModalVisible(false);
     };
 
     const columns = [
@@ -80,7 +86,6 @@ const ViewTableComponent = () => {
 
     const handleChangePagination = (data: string) => {
         setPage(Number(data));
-        console.log(data, 'hjgjghjgjhgjh');
     };
     return (
         <ListQuotesComponent>
@@ -112,24 +117,50 @@ const ViewTableComponent = () => {
                     />
                 </div>
             </div>
-            <Table
-                dataSource={dataSource}
-                columns={columns}
-                pagination={{ pageSize: page }}
-                rowClassName={(record, index) =>
-                    index % 2 === 0 ? 'highlight-row' : ''
-                }
-            />
-            <div className="viewNumPage">
-                <span>Items per page</span>
-                <DropdownCustom
-                    defaultItem={'5'}
-                    dataItem={showColumOnPage}
-                    isNotPagination={false}
-                    ondataChange={handleChangePagination}
+            {dataSource ? (
+                <div>
+                    <Table
+                        dataSource={dataSource}
+                        columns={columns}
+                        pagination={{ pageSize: page }}
+                        rowClassName={(record, index) =>
+                            index % 2 === 0 ? 'highlight-row' : ''
+                        }
+                    />
+                    <div className="viewNumPage">
+                        <span>Items per page</span>
+                        <DropdownCustom
+                            defaultItem={'5'}
+                            dataItem={showColumOnPage}
+                            isNotPagination={false}
+                            ondataChange={handleChangePagination}
+                        />
+                    </div>
+                    <ModalComponent
+                        width={1201}
+                        visible={isModalVisible}
+                        onClose={handleClose}
+                        title="Quote ID UK050757 - Previous versions"
+                        content={<VersionModal />}
+                    />
+                </div>
+            ) : (
+                <NotFound
+                    content={
+                        <div>
+                            <div>
+                                Hmm... Sorry we couldn’t find any matches for
+                                “Abc”.
+                            </div>
+                            <div>
+                                Please double check your search for any typos or
+                                spelling errors, or change your search terms.
+                            </div>
+                            <div>Clear search & Show all results</div>
+                        </div>
+                    }
                 />
-            </div>
-            <ModalComponent isShow={open}/>
+            )}
         </ListQuotesComponent>
     );
 };

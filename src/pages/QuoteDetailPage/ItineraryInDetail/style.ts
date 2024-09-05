@@ -3,6 +3,8 @@ import { all } from 'redux-saga/effects';
 
 const ItineraryInDetailStyle = styled('div')`
     width: 100%;
+    position: relative;
+    bottom: 45px;
     .hotelAndGoflView {
         border-radius: 4px;
         background: #fff;

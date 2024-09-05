@@ -17,5 +17,6 @@ const icons = {
     clockIcon: require('./clock-icon.svg').default,
     searchIcon: require('./search-icon.svg').default,
     stateLayer: require('./state-layer.svg').default,
+    eyeIcon: require('./eye-icon.svg').default,
 };
 export default icons;

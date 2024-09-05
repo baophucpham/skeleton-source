@@ -1,64 +1,34 @@
-import React, { ReactNode, useEffect, useState } from 'react';
-import ModalStyle from './style';
+import React from 'react';
 import { Modal } from 'antd';
+import ModalStyle from './style';
 
-interface ModalProps {
-    isShow?: boolean;
-    children?: ReactNode;
+interface CustomModalProps {
+    width?: number;
+    visible: boolean;
+    onClose: () => void;
+    title?: string;
+    content?: React.ReactNode;
+    footer?: React.ReactNode;
 }
 
-const ModalComponent: React.FC<ModalProps> = ({ isShow = false, children }) => {
-    const [open, setOpen] = useState(false);
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        console.log(isShow, 'muonting');
-        setOpen(isShow);
-        return () => {
-            setOpen(!open);
-            console.log(open,'unmuont')
-          };
-    }, [isShow]);
-
-    const handleOk = () => {
-        setLoading(true);
-    };
-
-    const handleCancel = () => {
-        setOpen(!open);
-    };
-
+const ModalComponent: React.FC<CustomModalProps> = ({
+    width,
+    visible,
+    onClose,
+    title,
+    content,
+    footer,
+}) => {
     return (
         <ModalStyle>
             <Modal
-                open={open}
-                title="Title"
-                onOk={handleOk}
-                onCancel={handleCancel}
-                // footer={[
-                //     <Button key="back" onClick={handleCancel}>
-                //         Return
-                //     </Button>,
-                //     <Button
-                //         key="submit"
-                //         type="primary"
-                //         loading={loading}
-                //         onClick={handleOk}
-                //     >
-                //         Submit
-                //     </Button>,
-                //     <Button
-                //         key="link"
-                //         href="https://google.com"
-                //         type="primary"
-                //         loading={loading}
-                //         onClick={handleOk}
-                //     >
-                //         Search on Google
-                //     </Button>,
-                // ]}
+                width={width ? width : 'auto'}
+                title={title || ''}
+                open={visible}
+                onCancel={onClose}
+                footer={footer || null}
             >
-                {children && children}
+                {content}
             </Modal>
         </ModalStyle>
     );

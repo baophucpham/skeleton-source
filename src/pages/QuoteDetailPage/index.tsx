@@ -48,6 +48,11 @@ const QuoteDetailPage = () => {
                 </div>
                 <div className="titleview">{childData.content}</div>
             </div>
+            {childData.id === nameView.PRICING_AND_BOOKING && (
+                <div className="viewShowImage">
+                    <img alt="" className="imageGoft" src={images.imageGoft} />
+                </div>
+            )}
             <div className="viewShowInfor">
                 <div className="viewInforLeft">
                     {childData.id === nameView.GOFL_TRAVEL_EXPERT && (
@@ -57,13 +62,13 @@ const QuoteDetailPage = () => {
                         <ItineraryInDetailComponent />
                     )}
                     {childData.id === nameView.PRICING_AND_BOOKING && (
-                        <PricingAndBookingComponent/>
+                        <PricingAndBookingComponent />
                     )}
                     {childData.id === nameView.IMPORTANT_INFORMATION && (
-                        <ImportantInformationComponent/>
+                        <ImportantInformationComponent />
                     )}
                     {childData.id === nameView.TERM_AND_CONDITION && (
-                        <TermsAndCoditionsComponent/>
+                        <TermsAndCoditionsComponent />
                     )}
                 </div>
                 <div className="viewInforRight">

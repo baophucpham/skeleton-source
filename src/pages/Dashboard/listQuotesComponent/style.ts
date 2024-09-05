@@ -61,6 +61,36 @@ const ListQuotesComponent = styled('div')`
         background: #fff;
         cursor: pointer;
     }
+    .table {
+        width: 100%;
+        border: 1px solid #ccc;
+        background: #fff;
+        /* shadow */
+        box-shadow: 4px 4px 20px 0px rgba(156, 171, 194, 0.4);
+        padding: 24px;
+    }
+    .ant-table-thead th {
+        background-color: #12b897 !important;
+        color: white !important;
+        font-weight: bold;
+        text-align: center;
+    }
+    .ant-table-thead .ant-table-cell {
+        border-radius: 0px !important;
+    }
+   
+    .quoteTitleColumn {
+        width: 450px;
+    }
+    .quoteRefColumn {
+        width: 13%;
+    }
+    .clientNameColumn {
+        width: 13%;
+    }
+    .departureDateColumn {
+        width: 13%;
+    }
 `;
 
 export default ListQuotesComponent;
