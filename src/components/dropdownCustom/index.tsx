@@ -23,7 +23,7 @@ const DropdownCustom: React.FC<ItemDopdownProps> = ({
     useEffect(() => {
         setDataOption(dataItem);
         setArrowPagination(isNotPagination);
-    }, [isNotPagination]);
+    }, [dataItem, isNotPagination]);
 
     const showMenu = () => {
         setIsShow(!show)

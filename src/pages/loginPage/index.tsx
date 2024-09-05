@@ -11,6 +11,7 @@ const Login = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const isAuthen = useSelector(isAuthSelector);
+    console.log(isAuthen)
 
     const onFinish = () => {
         dispatch(auth_exited(true));
