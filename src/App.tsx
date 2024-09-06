@@ -4,7 +4,6 @@ import ProtectedRoute from './router/protectedRoutes';
 import { useSelector } from 'react-redux';
 import { isAuthSelector } from './redux/selectors/authenSelector';
 import routes from './router/router';
-import QuoteDetailPage from './pages/QuoteDetailPage';
 import DashboardComponent from './pages/Dashboard';
 
 const App: React.FC = () => {

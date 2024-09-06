@@ -27,10 +27,13 @@ const IntroductionGoflTravelStyle = styled('div')`
         display: flex;
         justify-content: space-between;
         margin-top: 20px;
-        font-family: 'The Nautigal';
     }
     .inforSeller {
         text-align: right;
+        font-size: 14.062px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 20.391px;
     }
     .mailSeller {
         text-decoration-line: underline;
@@ -150,6 +153,10 @@ const IntroductionGoflTravelStyle = styled('div')`
     }
     .commentSeller {
         width: 50%;
+        color: #4f4f4f;
+        font-size: 16.071px;
+        font-weight: 400;
+        line-height: 22.098px;
     }
     .signEnd {
         width: 50%;
@@ -175,6 +182,12 @@ const IntroductionGoflTravelStyle = styled('div')`
         font-weight: 900;
         line-height: 20px;
         text-decoration-line: underline;
+    }
+    .signature {
+        font-family: 'The Nautigal', cursive;
+        font-size: 44.196px;
+        font-weight: 400;
+        line-height: 44.196px;
     }
 `;
 

@@ -23,7 +23,7 @@ const IntroductionGoflTravel = () => {
                     unforgettable golf getaway.
                 </div>
                 <div className="signIn">
-                    <div>Oliver</div>
+                    <div className='signature'>Oliver</div>
                     <div className="inforSeller">
                         <div>Oliver Gunning</div>
                         <div>0207 336 5340 </div>
@@ -120,7 +120,7 @@ const IntroductionGoflTravel = () => {
                             />
                         </div>
                         <div className='signEnd'>
-                            <div>O.Gunning</div>
+                            <div className='signature'>O.Gunning</div>
                             <div>
                                 <div className='phone'>0207 336 5340</div>
                                 <div className='email'>oliverg@yourgolftravel.com</div>
