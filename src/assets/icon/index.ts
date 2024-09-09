@@ -18,5 +18,9 @@ const icons = {
     searchIcon: require('./search-icon.svg').default,
     stateLayer: require('./state-layer.svg').default,
     eyeIcon: require('./eye-icon.svg').default,
+    step01: require('./step-01.svg').default,
+    step02: require('./step-02.svg').default,
+    step03: require('./step-03.svg').default,
+    finalStep: require('./final-step.svg').default,
 };
 export default icons;

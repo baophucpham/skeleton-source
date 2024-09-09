@@ -4,7 +4,7 @@ import ProtectedRoute from './router/protectedRoutes';
 import { useSelector } from 'react-redux';
 import { isAuthSelector } from './redux/selectors/authenSelector';
 import routes from './router/router';
-import DashboardComponent from './pages/Dashboard';
+import DashboardComponent from './pages/Dashboard'; 
 
 const App: React.FC = () => {
     const isAuthen = useSelector(isAuthSelector);

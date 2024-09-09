@@ -6,6 +6,7 @@ import Carousel from 'src/components/carouselCustom';
 import { arrCaurosel, arrWhyContent } from 'src/const/enum';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
+import StepComponent from './stepsComponent';
 
 const IntroductionGoflTravel = () => {
     return (
@@ -23,7 +24,7 @@ const IntroductionGoflTravel = () => {
                     unforgettable golf getaway.
                 </div>
                 <div className="signIn">
-                    <div className='signature'>Oliver</div>
+                    <div className="signature">Oliver</div>
                     <div className="inforSeller">
                         <div>Oliver Gunning</div>
                         <div>0207 336 5340 </div>
@@ -82,19 +83,7 @@ const IntroductionGoflTravel = () => {
             </div>
             <div className="carouselView">
                 <div className="titleWhyContent">Next steps</div>
-                <div className="showItemStep">
-                    {arrWhyContent.map((item, index) => {
-                        return (
-                            <div className="groupWhyItem" key={index}>
-                                <img
-                                    alt=""
-                                    className="iconWhy"
-                                    src={item.icon}
-                                />
-                            </div>
-                        );
-                    })}
-                </div>
+                <StepComponent />
             </div>
             <div className="endView">
                 <div className="titleWhyContent">
@@ -119,11 +108,13 @@ const IntroductionGoflTravel = () => {
                                 icon={faCircleUser}
                             />
                         </div>
-                        <div className='signEnd'>
-                            <div className='signature'>O.Gunning</div>
+                        <div className="signEnd">
+                            <div className="signature">O.Gunning</div>
                             <div>
-                                <div className='phone'>0207 336 5340</div>
-                                <div className='email'>oliverg@yourgolftravel.com</div>
+                                <div className="phone">0207 336 5340</div>
+                                <div className="email">
+                                    oliverg@yourgolftravel.com
+                                </div>
                                 <div>Handicap - 0</div>
                             </div>
                         </div>

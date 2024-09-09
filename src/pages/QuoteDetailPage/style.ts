@@ -4,13 +4,7 @@ const QuoteDetailPageStyle = styled('div')`
     display: flex;
     flex-direction: column;
     background: #f2f2f2;
-    height: 1080px;
-    @media screen and (max-width: 1024px) {
-        width: 100%;
-    }
-    @media screen and (max-width: 768px) {
-        width: 100%;
-    }
+
     .logoHeader {
         width: 234px;
         height: 86px;
@@ -69,7 +63,7 @@ const QuoteDetailPageStyle = styled('div')`
         display: flex;
         justify-content: space-between;
     }
-    .viewShowImage{
+    .viewShowImage {
         background: #fff;
         padding: 55px 129px 0px 129px;
         display: flex;
@@ -82,9 +76,45 @@ const QuoteDetailPageStyle = styled('div')`
     .viewInforRight {
         width: 30%;
     }
-    .imageGoft{
+    .imageGoft {
         width: 100%;
         border-radius: 6px;
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        .headerPage {
+            padding: 20px 40px 20px 40px;
+            display: flex;
+            align-items: center;
+        }
+        .logoHeader {
+            display: flex;
+            align-items: center;
+        }
+        .LogoIMG {
+            width: 150px;
+        }
+        .viewPromotion {
+            height: 46px;
+        }
+        .headerTitle {
+            padding: 20px 40px 20px 40px;
+        }
+        .titleHeader {
+            font-size: 29px;
+        }
+        .titleview {
+            font-size: 29px;
+        }
+        .viewShowInfor {
+            padding: 20px 40px 20px 40px;
+        }
+        .viewInforLeft {
+            width: 62%;
+        }
+        .viewInforRight {
+            width: 36%;
+        }
     }
 `;
 export default QuoteDetailPageStyle;

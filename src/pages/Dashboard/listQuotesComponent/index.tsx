@@ -12,9 +12,11 @@ import {
 import ModalComponent from 'src/components/modalCustom';
 import VersionModal from './VersionModal';
 import NotFound from '../../../components/NotFoundData';
+import { useHistory } from 'react-router-dom';
 
 const ViewTableComponent = () => {
     const [page, setPage] = useState<number>(5);
+    const history = useHistory();
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     const showModal = () => {
@@ -87,6 +89,10 @@ const ViewTableComponent = () => {
     const handleChangePagination = (data: string) => {
         setPage(Number(data));
     };
+    const handleRowClick=(item:any)=>{
+        console.log(item,'kjhkkjhkhk')
+        history.push('/quoteDetail');
+    }
     return (
         <ListQuotesComponent>
             <div className="viewSreach">
@@ -124,8 +130,13 @@ const ViewTableComponent = () => {
                         columns={columns}
                         pagination={{ pageSize: page }}
                         rowClassName={(record, index) =>
-                            index % 2 === 0 ? 'highlight-row' : ''
+                            index % 2 === 0 ? 'highlight-row' : 'custom-row'
                         }
+                        onRow={(record) => {
+                            return {
+                              onClick: () => handleRowClick(record), // Click event for the row
+                            };
+                          }}
                     />
                     <div className="viewNumPage">
                         <span>Items per page</span>

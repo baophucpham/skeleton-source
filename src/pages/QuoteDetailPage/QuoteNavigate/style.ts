@@ -90,6 +90,8 @@ const QouteNavigateStyle = styled('div')`
     .totalDeposit {
         font-size: 16px;
         font-weight: 900;
+        display: flex;
+        align-items: center;
     }
     .numGroups {
         font-size: 16px;
@@ -117,7 +119,7 @@ const QouteNavigateStyle = styled('div')`
         display: flex;
         align-items: center;
     }
-    .arrowLeft{
+    .arrowLeft {
         margin-right: 5px;
     }
     .contentNavigte:hover {
@@ -159,6 +161,48 @@ const QouteNavigateStyle = styled('div')`
         color: #12b897 !important;
         border-radius: 6px !important;
         border: 2px solid #12b897 !important;
+    }
+    @media screen and (max-width: 768px) {
+        .contentSeller {
+            width: 50%;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+        }
+        .css-5czugp .avatar {
+            width: 80%;
+            height: 80%;
+        }
+        .btnPhoneCall {
+            height: 40px;
+            font-size: 9px;
+        }
+        .viewinforPayment {
+            font-size: 12px;
+        }
+        .numGroups {
+            font-size: 12px;
+        }
+        .totalPrice {
+            font-size: 16px;
+        }
+        .numTotalPrice {
+            font-size: 16px;
+        }
+        .totalDeposit {
+            font-size: 14px;
+        }
+        .numTotalDeposit {
+            font-size: 14px;
+        }
+        .contentNavigte {
+            font-size: 9px;
+            line-height: 25px;
+        }
+        .contentNavigteFocus {
+            font-size: 9px;
+            line-height: 13px;
+        }
     }
 `;
 

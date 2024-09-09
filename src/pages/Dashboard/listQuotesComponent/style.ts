@@ -28,6 +28,7 @@ const ListQuotesComponent = styled('div')`
     }
     .highlight-row {
         background-color: #f7faff !important;
+        box-sizing: border-box;
     }
     .viewGroupsActions {
         width: 70px;
@@ -90,6 +91,20 @@ const ListQuotesComponent = styled('div')`
     }
     .departureDateColumn {
         width: 13%;
+    }
+    .highlight-row:hover{
+        color: #069;
+        border: 1px solid #069;
+    }
+    .custom-row{
+        box-sizing: border-box;
+    }
+    .custom-row:hover{
+        color: #069;
+        border: 1px solid #069 !important;
+    }
+    .ant-table-row:hover{
+        border: 1px solid #069 !important;
     }
 `;
 

@@ -189,6 +189,45 @@ const IntroductionGoflTravelStyle = styled('div')`
         font-weight: 400;
         line-height: 44.196px;
     }
+    @media screen and (max-width: 768px) {
+        .discriptionGoflTravel {
+            padding: 35px 30px 35px 30px;
+            font-size: 14px;
+        }
+        .titleWhyContent {
+            font-size: 20px;
+        }
+        .viewItemCarousel {
+            padding-left: 28%;
+        }
+        .commentSeller {
+            width: 40%;
+        }
+        .signEnd {
+            width: 100%;
+            text-align: right;
+            font-size: 13px;
+        }
+        .email {
+            font-size: 13px;
+        }
+        .avatarSeller {
+            width: 100%;
+        }
+        .avatarSignView {
+            display: flex;
+            flex-direction: column;
+        }
+        .avatar {
+            width: 100%;
+        }
+        .titleItem {
+            font-size: 14px;
+        }
+        .discriptionItem {
+            font-size: 12px;
+        }
+    }
 `;
 
 export default IntroductionGoflTravelStyle;

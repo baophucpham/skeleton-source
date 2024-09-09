@@ -70,5 +70,21 @@ const DashboardStyle = styled('div')`
         box-shadow: 4px 4px 20px 0px rgba(156, 171, 194, 0.4);
         padding: 24px;
     }
+    .menuBtn {
+        width: 100%;
+        height: 50%;
+    }
+    @media screen and (max-width: 768px) {
+        .menuDashboard {
+            width: 20%;
+        }
+        .LogoIMG {
+            width: 100%;
+        }
+        .tableDashboard {
+            width: 80%;
+            padding: 29px 24px 29px 24px;
+        }
+    }
 `;
 export default DashboardStyle;

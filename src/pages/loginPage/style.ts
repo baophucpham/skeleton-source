@@ -9,7 +9,7 @@ const LoginStyle = styled('div')`
     justify-content: center;
     background-image: url(${images.ygtBackgroundImage});
     position: fixed;
-    @media screen and (max-width: 1024px) {
+    /* @media screen and (max-width: 1024px) {
         width: 100%;
         height: 768px;
         overflow: hidden;
@@ -18,7 +18,7 @@ const LoginStyle = styled('div')`
         width: 100%;
         height: 1024px;
         overflow: hidden;
-    }
+    } */
     .title {
         font-size: 16px;
     }
@@ -54,7 +54,7 @@ const LoginStyle = styled('div')`
     .viewFromInput {
         width: 100%;
     }
-    .groupsItemLogin{
+    .groupsItemLogin {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -73,57 +73,42 @@ const LoginStyle = styled('div')`
         background-color: #004195 !important;
     }
     @media screen and (max-width: 768px) {
-        .imageBackground {
-            width: 60%;
-            height: 100%;
-        }
         .viewLogin {
-            width: 40%;
-            height: 100%;
-            background-color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 60px 45px 60px 55px;
+            padding: 30px 30px 30px 30px;
         }
         .LogoIMG {
-            margin-bottom: 70px;
+            margin-bottom: 20px;
+            width: 80%;
         }
         .titleLogin {
-            margin-bottom: 42px;
+            margin-bottom: 20px;
             font-weight: 600;
-            font-size: 17px;
-            line-height: 32.6px;
-            color: #555555;
-        }
-    }
-    @media screen and (max-width: 1024px) {
-        .imageBackground {
-            width: 60%;
-            height: 100%;
-        }
-        .viewLogin {
-            width: 40%;
-            height: 100%;
-            background-color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 60px 45px 60px 55px;
-        }
-        .LogoIMG {
-            margin-bottom: 70px;
-        }
-        .titleLogin {
-            margin-bottom: 42px;
-            font-weight: 600;
-            font-size: 17px;
-            line-height: 32.6px;
+            font-size: 22px;
+            line-height: 45.6px;
             color: #555555;
         }
         .custom-btuton {
-            height: 40px;
-            font-size: 15px;
+            font-size: 22px;
+        }
+    }
+    @media screen and (max-width: 375px) {
+        .viewLogin {
+            padding: 30px 30px 30px 30px;
+        }
+        .LogoIMG {
+            margin-bottom: 10px;
+            width: 90%;
+        }
+        .titleLogin {
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 7px;
+            line-height: 15px;
+            color: #555555;
+        }
+        .custom-btuton {
+            font-size: 7px;
+            height: 21px;
         }
     }
 `;
