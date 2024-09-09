@@ -13,10 +13,15 @@ import ItineraryInDetailComponent from './ItineraryInDetail';
 import PricingAndBookingComponent from './PricingAndBooking';
 import ImportantInformationComponent from './ImportantInformation';
 import TermsAndCoditionsComponent from './TermsAndCoditions';
+import { useResponsive } from '@farfetch/react-context-responsive';
 
 const QuoteDetailPage = () => {
     const history = useHistory();
+    const { lessThan } = useResponsive();
+    const isMobile = lessThan.sm;
     const isAuthen = useSelector(isAuthSelector);
+    console.log(isMobile,'mobiile')
+
     const [childData, setChildData] = useState<any>({
         id: nameView.GOFL_TRAVEL_EXPERT,
         content: 'Introduction from your Golf Travel Expert',
