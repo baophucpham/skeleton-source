@@ -71,9 +71,6 @@ const QuoteDetailPage = () => {
                     <div className="viewShowInfor">
                         <div className="viewInforLeft">
                             <Switch>
-                                <Route exact path="/quoteDetail">
-                                    <Redirect to="/quoteDetail/introduction" />
-                                </Route>
                                 <Route
                                     path="/quoteDetail/introduction"
                                     component={IntroductionGoflTravel}
@@ -94,6 +91,7 @@ const QuoteDetailPage = () => {
                                     path="/quoteDetail/termsAndCoditions"
                                     component={TermsAndCoditionsComponent}
                                 />
+                                 <Route render={() => <Redirect to="/quoteDetail/introduction" />} />
                             </Switch>
                         </div>
                         <div className="viewInforRight">
