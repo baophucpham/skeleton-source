@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleUser,
@@ -10,7 +10,7 @@ import { Button } from 'antd';
 import icons from 'src/assets/icon';
 import QouteNavigateStyle from './style';
 import { arrGroup, nameView } from 'src/const/enum';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 interface ChildComponentProps {
     onDataChange: (data: any) => void;
@@ -20,12 +20,14 @@ const QouteNavigateCompoment: React.FC<ChildComponentProps> = ({
     onDataChange,
 }) => {
     const [navigate, setNavigate] = useState<Number>(1);
-    // const history = useHistory();
-    const clickForChangeView = (id: number, content: string) => {
+    const history = useHistory();
+
+    const clickForChangeView = (id: number, content: string, path: string) => {
         setNavigate(id);
         onDataChange({ id: id, content: content });
-        // history.push('/new');
+        history.push(`/quoteDetail/${path}`);
     };
+
     return (
         <QouteNavigateStyle>
             <div className="inforSeller">
@@ -91,6 +93,7 @@ const QouteNavigateCompoment: React.FC<ChildComponentProps> = ({
                         clickForChangeView(
                             nameView.GOFL_TRAVEL_EXPERT,
                             'Introduction from your Golf Travel Expert',
+                            'introduction',
                         )
                     }
                 >
@@ -113,6 +116,7 @@ const QouteNavigateCompoment: React.FC<ChildComponentProps> = ({
                         clickForChangeView(
                             nameView.ITINERARY_IN_DETAIL,
                             'See itinerary in detail',
+                            'itineraryInDetail',
                         )
                     }
                 >
@@ -136,6 +140,7 @@ const QouteNavigateCompoment: React.FC<ChildComponentProps> = ({
                         clickForChangeView(
                             nameView.PRICING_AND_BOOKING,
                             'Pricing and booking',
+                            'pricingAndBooking',
                         )
                     }
                 >
@@ -158,6 +163,7 @@ const QouteNavigateCompoment: React.FC<ChildComponentProps> = ({
                         clickForChangeView(
                             nameView.IMPORTANT_INFORMATION,
                             'Important information',
+                            'importantInformation',
                         )
                     }
                 >
@@ -180,6 +186,7 @@ const QouteNavigateCompoment: React.FC<ChildComponentProps> = ({
                         clickForChangeView(
                             nameView.TERM_AND_CONDITION,
                             'Terms & conditions',
+                            'termsAndCoditions',
                         )
                     }
                 >
