@@ -10,7 +10,7 @@ import { Button } from 'antd';
 import icons from 'src/assets/icon';
 import QouteNavigateStyle from './style';
 import { arrGroup, nameView } from 'src/const/enum';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 interface ChildComponentProps {
     onDataChange: (data: any) => void;
@@ -21,6 +21,48 @@ const QouteNavigateCompoment: React.FC<ChildComponentProps> = ({
 }) => {
     const [navigate, setNavigate] = useState<Number>(1);
     const history = useHistory();
+    const location = useLocation();
+
+    useEffect(() => {
+        const currentPath = location.pathname.split('/').filter(Boolean);
+        if (currentPath[1] === 'introduction') {
+            setNavigate(nameView.GOFL_TRAVEL_EXPERT);
+            onDataChange({
+                id: nameView.GOFL_TRAVEL_EXPERT,
+                content: 'Introduction from your Golf Travel Expert',
+            });
+        }
+        if (currentPath[1] === 'itineraryInDetail') {
+            setNavigate(nameView.ITINERARY_IN_DETAIL);
+            onDataChange({
+                id: nameView.ITINERARY_IN_DETAIL,
+                content: 'See itinerary in detail',
+            });
+        }
+        if (currentPath[1] === 'pricingAndBooking') {
+            setNavigate(nameView.PRICING_AND_BOOKING);
+            onDataChange({
+                id: nameView.PRICING_AND_BOOKING,
+                content: 'Pricing and booking',
+            });
+        }
+        if (currentPath[1] === 'importantInformation') {
+            setNavigate(nameView.IMPORTANT_INFORMATION);
+            onDataChange({
+                id: nameView.IMPORTANT_INFORMATION,
+                content: 'Important information',
+            });
+        }
+        if (currentPath[1] === 'termsAndCoditions') {
+            setNavigate(nameView.TERM_AND_CONDITION);
+            onDataChange({
+                id: nameView.TERM_AND_CONDITION,
+                content: 'Terms & conditions',
+            });
+        }
+
+        console.log(currentPath[1], 'currentPath');
+    }, [location.pathname, onDataChange]);
 
     const clickForChangeView = (id: number, content: string, path: string) => {
         setNavigate(id);
