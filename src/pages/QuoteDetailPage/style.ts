@@ -4,7 +4,9 @@ const QuoteDetailPageStyle = styled('div')`
     display: flex;
     flex-direction: column;
     background: #f2f2f2;
-
+    .mobileView{
+        display: none;
+    }
     .logoHeader {
         width: 234px;
         height: 86px;
@@ -114,6 +116,14 @@ const QuoteDetailPageStyle = styled('div')`
         }
         .viewInforRight {
             width: 36%;
+        }
+    }
+    @media screen and (max-width: 430px) {
+        .mobileView{
+            display: flex;
+        }
+        .deskTopView{
+            display: none;
         }
     }
 `;

@@ -10,6 +10,7 @@ import { Button } from 'antd';
 import icons from 'src/assets/icon';
 import QouteNavigateStyle from './style';
 import { arrGroup, nameView } from 'src/const/enum';
+// import { useHistory } from 'react-router-dom';
 
 interface ChildComponentProps {
     onDataChange: (data: any) => void;
@@ -19,9 +20,11 @@ const QouteNavigateCompoment: React.FC<ChildComponentProps> = ({
     onDataChange,
 }) => {
     const [navigate, setNavigate] = useState<Number>(1);
+    // const history = useHistory();
     const clickForChangeView = (id: number, content: string) => {
         setNavigate(id);
         onDataChange({ id: id, content: content });
+        // history.push('/new');
     };
     return (
         <QouteNavigateStyle>
