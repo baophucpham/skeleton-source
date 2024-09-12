@@ -20,6 +20,7 @@ const DropdownStyle = styled('div')`
     }
     .SearchByQuoteView:hover {
         background: #deebff;
+        border: 1px solid #069;
     }
     .iconSearchByQuote {
         width: 13px;

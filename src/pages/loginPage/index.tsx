@@ -1,7 +1,7 @@
 import { Button } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { auth_exited } from 'src/redux/actions/authenAction';
+import { authExited } from 'src/redux/actions/authenAction';
 import { isAuthSelector } from 'src/redux/selectors/authenSelector';
 
 import LoginStyle from './style';
@@ -11,10 +11,10 @@ const Login = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const isAuthen = useSelector(isAuthSelector);
-    console.log(isAuthen)
+    console.log(isAuthen,'isAuthen');
 
     const onFinish = () => {
-        dispatch(auth_exited(true));
+        dispatch(authExited(true));
         history.push('/dashboard');
     };
 
@@ -28,10 +28,15 @@ const Login = () => {
                         <Button
                             className="custom-btuton"
                             type="primary"
-                            onClick={() => onFinish()}
+                            onClick={onFinish}
                         >
                             Login with SSO
                         </Button>
+                        {/* <GoogleLogin
+                            onSuccess={onFinish}
+                            onError={handleLoginError}
+                            useOneTap
+                        /> */}
                     </div>
                 </div>
             </div>

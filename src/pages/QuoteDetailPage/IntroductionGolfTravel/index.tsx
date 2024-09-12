@@ -7,8 +7,13 @@ import { arrCaurosel, arrWhyContent } from 'src/const/enum';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import StepComponent from './stepsComponent';
+import { useSelector } from 'react-redux';
+import { roleSelector } from 'src/redux/selectors/checkRoleSelecter';
 
 const IntroductionGoflTravel = () => {
+    const isRole = useSelector(roleSelector);
+    
+    console.log(isRole, 'Role here')
     return (
         <IntroductionGoflTravelStyle>
             <img alt="" className="imgGoflTravel" src={images.golfView} />

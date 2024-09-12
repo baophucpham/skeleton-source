@@ -8,7 +8,6 @@ import DashboardComponent from './pages/Dashboard';
 
 const App: React.FC = () => {
     const isAuthen = useSelector(isAuthSelector);
-    console.log(isAuthen);
 
     return (
         <Switch>

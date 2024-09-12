@@ -163,21 +163,20 @@ export const nameView = {
 };
 
 export const showColumOnPage = [
-    { key: '1', label: '5' },
     { key: '1', label: '10' },
-    { key: '1', label: '20' },
+    { key: '2', label: '20' },
+    { key: '3', label: '30' },
 ];
 
 export const listSearch = [
-    { key: '1', label: 'By Quote Ref' },
-    { key: '1', label: 'By Client Name' },
-    { key: '1', label: 'By Quote Title' },
+    { key: '1', label: 'Quote Ref' },
+    { key: '2', label: 'Quote Title' },
+    { key: '3', label: 'Client Name' },
 ];
 
 export const listSort = [
-    { key: '1', label: 'Newest' },
-    { key: '1', label: 'Created date' },
     { key: '1', label: 'Updated date' },
+    { key: '2', label: 'Created date' },
 ];
 
 export const dataSource = [
@@ -189,7 +188,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'sent',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '2',
@@ -199,7 +197,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'Draft',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '3',
@@ -209,7 +206,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'sent',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '4',
@@ -219,7 +215,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'Draft',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '5',
@@ -229,7 +224,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'sent',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '6',
@@ -239,7 +233,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'Draft',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '7',
@@ -249,7 +242,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'sent',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '8',
@@ -259,7 +251,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'Draft',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '9',
@@ -269,7 +260,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'sent',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '10',
@@ -279,7 +269,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'Draft',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '11',
@@ -289,7 +278,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'sent',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '12',
@@ -299,7 +287,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'Draft',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '13',
@@ -309,7 +296,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'sent',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '14',
@@ -319,7 +305,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'Draft',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '15',
@@ -329,7 +314,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'sent',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '16',
@@ -339,7 +323,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'Draft',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '17',
@@ -349,7 +332,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'sent',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '18',
@@ -359,7 +341,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'Draft',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '19',
@@ -369,7 +350,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'sent',
         version: 'V1',
-        action: 'delete',
     },
     {
         key: '20',
@@ -379,7 +359,6 @@ export const dataSource = [
         clientName: 'Oliver Gunning',
         status: 'Draft',
         version: 'V1',
-        action: 'delete',
     },
 ];
 

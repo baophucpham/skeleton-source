@@ -10,6 +10,7 @@ const ListQuotesComponent = styled('div')`
     .searchGroups {
         display: flex;
         align-items: center;
+        width: 50%;
     }
     .ant-input-affix-wrapper-lg {
         border-radius: 0px;
@@ -48,7 +49,7 @@ const ListQuotesComponent = styled('div')`
         font-weight: 400;
         line-height: 20px;
         position: relative;
-        bottom: 40px;
+        bottom: 53px;
     }
     .chooseNumPage {
         display: flex;
@@ -105,6 +106,12 @@ const ListQuotesComponent = styled('div')`
     }
     .ant-table-row:hover{
         border: 1px solid #069 !important;
+    }
+    .ant-input-outlined:hover{
+        border: 1px solid #069;
+    }
+    .viewSreach{
+
     }
 `;
 

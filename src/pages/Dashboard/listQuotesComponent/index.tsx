@@ -15,7 +15,7 @@ import NotFound from '../../../components/NotFoundData';
 import { useHistory } from 'react-router-dom';
 
 const ViewTableComponent = () => {
-    const [page, setPage] = useState<number>(5);
+    const [page, setPage] = useState<number>(10);
     const history = useHistory();
     const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -90,8 +90,7 @@ const ViewTableComponent = () => {
         setPage(Number(data));
     };
     const handleRowClick=(item:any)=>{
-        console.log(item,'kjhkkjhkhk')
-        history.push('/quoteDetail');
+        history.push('/quoteDetail','Preview mode');
     }
     return (
         <ListQuotesComponent>
@@ -101,7 +100,7 @@ const ViewTableComponent = () => {
                         defaultItem={'Search by Quote Ref'}
                         dataItem={listSearch}
                     />
-                    <div>
+                    <div >
                         <Input
                             size="large"
                             placeholder="Search"
@@ -141,7 +140,7 @@ const ViewTableComponent = () => {
                     <div className="viewNumPage">
                         <span>Items per page</span>
                         <DropdownCustom
-                            defaultItem={'5'}
+                            defaultItem={page}
                             dataItem={showColumOnPage}
                             isNotPagination={false}
                             ondataChange={handleChangePagination}

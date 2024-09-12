@@ -60,9 +60,7 @@ const QouteNavigateCompoment: React.FC<ChildComponentProps> = ({
                 content: 'Terms & conditions',
             });
         }
-
-        console.log(currentPath[1], 'currentPath');
-    }, [location.pathname, onDataChange]);
+    }, [location.pathname]);
 
     const clickForChangeView = (id: number, content: string, path: string) => {
         setNavigate(id);
