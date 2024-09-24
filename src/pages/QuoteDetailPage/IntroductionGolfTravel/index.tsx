@@ -1,35 +1,126 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import IntroductionGoflTravelStyle from './style';
 import images from 'src/assets/image';
 import icons from 'src/assets/icon';
 import Carousel from 'src/components/carouselCustom';
-import { arrCaurosel, arrWhyContent } from 'src/const/enum';
+import { arrCaurosel } from 'src/const/enum';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import StepComponent from './stepsComponent';
 import { useSelector } from 'react-redux';
 import { roleSelector } from 'src/redux/selectors/checkRoleSelecter';
+import WhatOutGolferSayComponent from './whatOutGolfersSayComponent';
+import { useLocation } from 'react-router-dom';
+import { Skeleton } from 'antd';
+import { getImageApi } from 'src/api/apiGetImage';
 
-const IntroductionGoflTravel = () => {
+interface IntroductionGoflTravelProps {
+    customProp: any;
+}
+
+const IntroductionGoflTravel: React.FC<IntroductionGoflTravelProps> = (
+    props,
+) => {
     const isRole = useSelector(roleSelector);
-    
-    console.log(isRole, 'Role here')
+    const location: any = useLocation();
+    const { customProp } = props;
+    const queryParams = new URLSearchParams(location.search);
+    const [mainImage, setMainImage] = useState<any>();
+    const type = queryParams.get('type');
+
+    const defautImage = customProp?.defaultImage?.sys?.id;
+
+    useEffect(() => {
+        if (defautImage) {
+            const fetchData = async () => {
+                try {
+                    const response = await getImageApi(defautImage);
+                    setMainImage(response);
+                } catch (err) {
+                    setMainImage(null);
+                }
+            };
+            fetchData();
+        }
+    }, [defautImage]);
+
+    const imageIntroDuction = `http:${mainImage?.fields?.file?.url}`;
+    console.log(imageIntroDuction);
+
+    const contentStandard =
+        customProp?.agentIntroStandard?.content[0]?.content[0]?.value;
+    const signinStandard =
+        customProp?.agentIntroStandard?.content[1]?.content[0]?.value;
+    const contentEvent =
+        customProp?.salesAgentIntroTournament.content[0]?.content[0]?.value;
+    const signinEvent =
+        customProp?.salesAgentIntroTournament.content[1]?.content[0]?.value;
+
+    const iconArr: Record<string, string> = {
+        whyBookWithImage1: customProp?.whyBookWithImage1?.sys?.id,
+        whyBookWithImage2: customProp?.whyBookWithImage2?.sys?.id,
+        whyBookWithImage3: customProp?.whyBookWithImage3?.sys?.id,
+        whyBookWithImage4: customProp?.whyBookWithImage4?.sys?.id,
+    };
+
+    const titleArr: Record<string, string> = {
+        whyBookWithYgtTitle1: customProp?.whyBookWithYgtTitle1,
+        whyBookWithYgtTitle2: customProp?.whyBookWithYgtTitle2,
+        whyBookWithYgtTitle3: customProp?.whyBookWithYgtTitle3,
+        whyBookWithYgtTitle4: customProp?.whyBookWithYgtTitle4,
+    };
+
+    const discriptionArr: Record<string, string> = {
+        quoteWhyBookWithYourGolfTravel:
+            customProp?.quoteWhyBookWithYourGolfTravel?.content[0]?.content[0]
+                .value,
+        quoteWhyBookWithYourGolfTravel2:
+            customProp?.quoteWhyBookWithYourGolfTravel2?.content[0]?.content[0]
+                .value,
+        quoteWhyBookWithYourGolfTravel3:
+            customProp?.quoteWhyBookWithYourGolfTravel3?.content[0]?.content[0]
+                .value,
+        quoteWhyBookWithYourGolfTravel4:
+            customProp?.quoteWhyBookWithYourGolfTravel4?.content[0]?.content[0]
+                .value,
+    };
+
+    const arrWhyContentNew = [1, 2, 3, 4].map((id) => ({
+        id,
+        icon: iconArr[`whyBookWithImage${id}`],
+        title: titleArr[`whyBookWithYgtTitle${id}`],
+        discription:
+            discriptionArr[
+                `quoteWhyBookWithYourGolfTravel${id === 1 ? '' : id}`
+            ],
+    }));
+
+    useEffect(() => {}, [isRole]);
+
     return (
         <IntroductionGoflTravelStyle>
-            <img alt="" className="imgGoflTravel" src={images.golfView} />
-            <div className="discriptionGoflTravel">
-                <div className="content">
-                    I have prepared the quote for your golf holiday at The
-                    Belfry. The package includes accommodation, green fees, and
-                    additional amenities tailored to enhance your experience.
-                    Great talking to you today, and I hope you’re enjoying your
-                    new clubs! Please review the attached details, and feel free
-                    to reach out if you have any questions or require
-                    adjustments. I look forward to assisting you in creating an
-                    unforgettable golf getaway.
+            {mainImage ? (
+                <div className='viewMainImage'>
+                    <img alt="" className="imgGoflTravel" src={imageIntroDuction} />
                 </div>
+            ) : (
+                <Skeleton.Image className="imgGoflTravel" active={true} />
+            )}
+            <div className="discriptionGoflTravel">
+                {customProp ? (
+                    <div className="content">
+                        {type === 'Event' ? contentEvent : contentStandard}
+                    </div>
+                ) : (
+                    <Skeleton active={true} />
+                )}
                 <div className="signIn">
-                    <div className="signature">Oliver</div>
+                    <div>
+                        <div>
+                            {type === 'Event' ? signinEvent : signinStandard}
+                        </div>
+                        <div className="signature">Oliver</div>
+                    </div>
                     <div className="inforSeller">
                         <div>Oliver Gunning</div>
                         <div>0207 336 5340 </div>
@@ -45,19 +136,14 @@ const IntroductionGoflTravel = () => {
                     Why book with Your Golf Travel?
                 </div>
                 <div className="showItemWhy">
-                    {arrWhyContent.map((item, index) => {
+                    {arrWhyContentNew.map((item: any, index: any) => {
                         return (
-                            <div className="groupWhyItem" key={index}>
-                                <img
-                                    alt=""
-                                    className="iconWhy"
-                                    src={item.icon}
-                                />
-                                <p className="titleItem">{item.title}</p>
-                                <p className="discriptionItem">
-                                    {item.discription}
-                                </p>
-                            </div>
+                            <WhatOutGolferSayComponent
+                                imageId={item.icon}
+                                title={item.title}
+                                content={item.discription}
+                                key={index}
+                            />
                         );
                     })}
                 </div>

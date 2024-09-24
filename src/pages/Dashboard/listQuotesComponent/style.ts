@@ -10,7 +10,10 @@ const ListQuotesComponent = styled('div')`
     .searchGroups {
         display: flex;
         align-items: center;
-        width: 50%;
+        /* width: 50%; */
+    }
+    .totalResponse {
+        margin-left: 16px;
     }
     .ant-input-affix-wrapper-lg {
         border-radius: 0px;
@@ -37,6 +40,10 @@ const ListQuotesComponent = styled('div')`
         justify-content: space-between;
     }
     .actionIcon {
+        cursor: pointer;
+    }
+    .disableAction {
+        color: rgba(0, 102, 153, 0.5);
         cursor: pointer;
     }
     .viewNumPage {
@@ -80,7 +87,7 @@ const ListQuotesComponent = styled('div')`
     .ant-table-thead .ant-table-cell {
         border-radius: 0px !important;
     }
-   
+
     .quoteTitleColumn {
         width: 450px;
     }
@@ -93,25 +100,44 @@ const ListQuotesComponent = styled('div')`
     .departureDateColumn {
         width: 13%;
     }
-    .highlight-row:hover{
+    .highlight-row:hover {
         color: #069;
         border: 1px solid #069;
     }
-    .custom-row{
+    .custom-row {
         box-sizing: border-box;
     }
-    .custom-row:hover{
+    .custom-row:hover {
         color: #069;
         border: 1px solid #069 !important;
     }
-    .ant-table-row:hover{
+    .ant-table-row:hover {
         border: 1px solid #069 !important;
     }
-    .ant-input-outlined:hover{
+    .ant-input-outlined:hover {
         border: 1px solid #069;
     }
-    .viewSreach{
-
+    .viewSearch {
+        width: 270px;
+    }
+    .clearSreach {
+        color: #069;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.5px;
+        cursor: pointer;
+    }
+    .allViewMess {
+        display: flex;
+        /* width: 500px; */
+        white-space: normal;
+    }
+    .debouncedView {
+        width: 77px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+        margin-left: 6px;
     }
 `;
 

@@ -162,6 +162,29 @@ const QouteNavigateStyle = styled('div')`
         border-radius: 6px !important;
         border: 2px solid #12b897 !important;
     }
+    .nameGolfer {
+        color: #454545;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 150%;
+    }
+    .nameGroups {
+        color: #454545;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 34.516px;
+        margin-right: 6px;
+    }
+    .groupComponent {
+        display: flex;
+    }
+    .title {
+        color: #454545;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 34.516px;
+        letter-spacing: 0.16px;
+    }
     @media screen and (max-width: 768px) {
         .contentSeller {
             width: 50%;

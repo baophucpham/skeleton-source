@@ -1,21 +1,15 @@
 import { Button } from 'antd';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { authExited } from 'src/redux/actions/authenAction';
-import { isAuthSelector } from 'src/redux/selectors/authenSelector';
-
 import LoginStyle from './style';
 import images from 'src/assets/image';
 
 const Login = () => {
-    const dispatch = useDispatch();
-    const history = useHistory();
-    const isAuthen = useSelector(isAuthSelector);
-    console.log(isAuthen,'isAuthen');
-
+    const googleRedirectUrl = process.env.REACT_APP_REDIRECT_URL!;
+    const clientId = process.env.REACT_APP_CLIENT_ID!;
+    const domain = window.location.origin;
+    const takeDomain = `${domain}`
+    const allUrlRedirect=`${googleRedirectUrl}${clientId}${takeDomain}/oauth2/callback&response_type=code&scope=openid profile email`
     const onFinish = () => {
-        dispatch(authExited(true));
-        history.push('/dashboard');
+        window.location.href = allUrlRedirect;
     };
 
     return (
@@ -32,11 +26,6 @@ const Login = () => {
                         >
                             Login with SSO
                         </Button>
-                        {/* <GoogleLogin
-                            onSuccess={onFinish}
-                            onError={handleLoginError}
-                            useOneTap
-                        /> */}
                     </div>
                 </div>
             </div>

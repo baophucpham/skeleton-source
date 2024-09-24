@@ -149,9 +149,9 @@ export const dataItineraryInDetail = [
 ];
 
 export const arrGroup = [
-    { id: 1, nameGroup: 'Group A (price per person)', price: '£199' },
-    { id: 2, nameGroup: 'Group B (price per person)', price: '£199' },
-    { id: 3, nameGroup: 'Group C (price per person)', price: '£199' },
+    { id: 1, nameGroup: 'Group A', price: '£199' },
+    { id: 2, nameGroup: 'Group B', price: '£199' },
+    { id: 3, nameGroup: 'Group C', price: '£199' },
 ];
 
 export const nameView = {
@@ -170,8 +170,7 @@ export const showColumOnPage = [
 
 export const listSearch = [
     { key: '1', label: 'Quote Ref' },
-    { key: '2', label: 'Quote Title' },
-    { key: '3', label: 'Client Name' },
+    { key: '2', label: 'Client Name' },
 ];
 
 export const listSort = [

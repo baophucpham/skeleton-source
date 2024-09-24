@@ -2,10 +2,16 @@ import styled from '@emotion/styled';
 
 const IntroductionGoflTravelStyle = styled('div')`
     width: 100%;
+    .viewMainImage{
+        width: 100%;
+        height: 413px;
+        margin-bottom: 23px;
+    }
     .imgGoflTravel {
         width: 100%;
         height: 100%;
-        margin-bottom: 23px;
+        object-fit: cover;
+        border-radius: 6px;
     }
     .discriptionGoflTravel {
         width: 100%;
@@ -20,7 +26,7 @@ const IntroductionGoflTravelStyle = styled('div')`
         margin-bottom: 37px;
     }
     .content {
-        width: 80%;
+        width: 62%;
     }
     .signIn {
         width: 100%;

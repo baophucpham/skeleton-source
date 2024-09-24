@@ -9,8 +9,55 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { dataGroupInfor } from 'src/const/enum';
 import images from 'src/assets/image';
+import { useLocation } from 'react-router-dom';
+import parse from 'html-react-parser';
+import { Skeleton } from 'antd';
 
-const PricingAndBookingComponent = () => {
+interface PricingAndBookingProps {
+    dataReadyToBook?: any;
+}
+
+const PricingAndBookingComponent: React.FC<PricingAndBookingProps> = ({
+    dataReadyToBook,
+}) => {
+    const location: any = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const type = queryParams.get('type');
+
+    const replacements: { [key: string]: string } = {
+        '{agent tel number}': '123-456-7890',
+        '{date}': '01/01/2024',
+    };
+
+    const readyToBookEvent =
+        dataReadyToBook?.readyToBookEvent?.content[0]?.content
+            .map((item: any) => item.value)
+            .join('');
+    let formattextReadyToBookEvent = readyToBookEvent?.replace(/\n/g, '<br/>');
+    Object.keys(replacements).forEach((key) => {
+        const regex = new RegExp(key, 'g');
+        formattextReadyToBookEvent = formattextReadyToBookEvent?.replace(
+            regex,
+            replacements[key],
+        );
+    });
+
+    const readyToBookStandard =
+        dataReadyToBook?.readyToBookStandard?.content[0]?.content
+            .map((item: any) => item.value)
+            .join('');
+    let formattextReadyToBookStandard = readyToBookStandard?.replace(
+        /\n/g,
+        '<br/>',
+    );
+    Object.keys(replacements).forEach((key) => {
+        const regex = new RegExp(key, 'g');
+        formattextReadyToBookStandard = formattextReadyToBookStandard?.replace(
+            regex,
+            replacements[key],
+        );
+    });
+
     return (
         <PricingAndBookingStyle>
             <div className="areaTitleQuote">
@@ -82,23 +129,26 @@ const PricingAndBookingComponent = () => {
                     <div className="priceDeposit">£1,494</div>
                 </div>
                 <div className="areaChoosen">
-                    <div className="titleAreaChoosen">Ready to book?</div>
-                    <div className="contentAreaChoosen">
-                        {`I hope I have everything right for you on this
-                        quotation, but if there is anything you would like to
-                        change let me know. As discussed I’ve added in the free
-                        polo shirt.  When you are ready to book, we can secure
-                        your reservation with a deposit of £200.00, the balance
-                        is due on 16/07/2025. I will schedule a call to answer
-                        any immediate questions you may have and look forward to
-                        speaking to you soon.`}
-                    </div>
-                    <div className="btnEnd">
-                        Click here to pay your £200 deposit and secure your
-                        holiday
-                    </div>
+                    {dataReadyToBook ? (
+                        <div>
+                            <div className="titleAreaChoosen">
+                                Ready to book?
+                            </div>
+                            <div className="contentAreaChoosen">
+                                {type === 'Event'
+                                    ? parse(formattextReadyToBookEvent)
+                                    : parse(formattextReadyToBookStandard)}
+                            </div>
+                            <div className="btnEnd">
+                                Click here to pay your £200 deposit and secure
+                                your holiday
+                            </div>
+                        </div>
+                    ) : (
+                        <Skeleton active={true} />
+                    )}
                 </div>
-                <div className='areaLogo'>
+                <div className="areaLogo">
                     <img
                         alt=""
                         className="imageGoftLogo"

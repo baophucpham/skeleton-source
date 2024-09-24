@@ -22,5 +22,6 @@ const icons = {
     step02: require('./step-02.svg').default,
     step03: require('./step-03.svg').default,
     finalStep: require('./final-step.svg').default,
+    shareLinkDisable: require('./shareLinkDisable.svg').default
 };
 export default icons;

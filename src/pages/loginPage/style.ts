@@ -8,6 +8,9 @@ const LoginStyle = styled('div')`
     align-items: center;
     justify-content: center;
     background-image: url(${images.ygtBackgroundImage});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     position: fixed;
     /* @media screen and (max-width: 1024px) {
         width: 100%;

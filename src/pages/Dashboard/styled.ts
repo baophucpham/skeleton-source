@@ -60,7 +60,6 @@ const DashboardStyle = styled('div')`
         color: #4f4f4f;
         font-size: 38px;
         font-weight: 700;
-        margin-bottom: 35px;
     }
     .table {
         width: 100%;
@@ -73,6 +72,34 @@ const DashboardStyle = styled('div')`
     .menuBtn {
         width: 100%;
         height: 50%;
+    }
+    .ant-btn-default {
+        border: none !important;
+    }
+    .ant-popover-inner-content .logOutBtn {
+        cursor: pointer !important;
+    }
+    .dropdown-content-login {
+        position: fixed;
+        bottom: 31px;
+        left: 200px;
+        bottom: 12px;
+        display: flex;
+        flex-direction: column;
+        z-index: 12;
+        box-shadow: 4px 4px 20px 0px rgba(156, 171, 194, 0.4);
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        padding: 10px 16px 10px 16px;
+        cursor: pointer !important;
+    }
+
+    .headerTable {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 35px;
     }
     @media screen and (max-width: 768px) {
         .menuDashboard {

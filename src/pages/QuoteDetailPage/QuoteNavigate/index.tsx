@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+    faArrowPointer,
     faCircleUser,
     faDownload,
-    faPhoneFlip,
     faShareNodes,
 } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'antd';
@@ -22,6 +22,11 @@ const QouteNavigateCompoment: React.FC<ChildComponentProps> = ({
     const [navigate, setNavigate] = useState<Number>(1);
     const history = useHistory();
     const location = useLocation();
+
+    const queryParams = new URLSearchParams(window.location.search);
+
+    const idQuote = queryParams.get('id');
+    const type = queryParams.get('type');
 
     useEffect(() => {
         const currentPath = location.pathname.split('/').filter(Boolean);
@@ -65,7 +70,7 @@ const QouteNavigateCompoment: React.FC<ChildComponentProps> = ({
     const clickForChangeView = (id: number, content: string, path: string) => {
         setNavigate(id);
         onDataChange({ id: id, content: content });
-        history.push(`/quoteDetail/${path}`);
+        history.replace(`/quoteDetail/${path}?id=${idQuote}&type=${type}`);
     };
 
     return (
@@ -78,7 +83,7 @@ const QouteNavigateCompoment: React.FC<ChildComponentProps> = ({
                         </div>
                         <br />
                         <div>
-                            <div>Oliver Gunning </div>
+                            <div className="nameGolfer">Oliver Gunning </div>
                             <div>Golf Travel Expert</div>
                             <div>Handicap - 0</div>
                         </div>
@@ -91,8 +96,8 @@ const QouteNavigateCompoment: React.FC<ChildComponentProps> = ({
                     </div>
                 </div>
                 <Button type="primary" className="btnPhoneCall">
-                    Call me on 0800 043 6644{' '}
-                    <FontAwesomeIcon icon={faPhoneFlip} /> to book{' '}
+                    <FontAwesomeIcon icon={faArrowPointer} />
+                    Secure Quote Now for £200
                 </Button>
             </div>
             <div className="inforPayMent">
@@ -100,7 +105,12 @@ const QouteNavigateCompoment: React.FC<ChildComponentProps> = ({
                     {arrGroup.map((item, index) => {
                         return (
                             <div key={index} className="viewinforPayment">
-                                <div>{item?.nameGroup}</div>
+                                <div className='groupComponent'>
+                                    <div className="nameGroups">
+                                        {item?.nameGroup}
+                                    </div>
+                                    <div className="title">(price per person)</div>
+                                </div>
                                 <div className="numGroups">{item?.price}</div>
                                 <img
                                     alt=""

@@ -1,7 +1,52 @@
 import React from 'react';
 import ImportantInformationStyle from './style';
 
-const ImportantInformationComponent = () => {
+interface ImportantInforProps {
+    dataImportanInfor?: any;
+}
+interface BaseNode {
+    data: any;
+    content?: Node[];
+    nodeType: string;
+    marks?: any[];
+}
+
+interface TextNode extends BaseNode {
+    nodeType: "text";
+    value: string; // Chỉ có ở TextNode
+}
+
+type Node = BaseNode | TextNode; 
+const ImportantInformationComponent: React.FC<ImportantInforProps> = ({
+    dataImportanInfor,
+}) => {
+    const extractValues = (node: Node): string[] => {
+        let values: string[] = [];
+    
+        if (Array.isArray(node.content)) {
+            node.content.forEach((childNode: Node) => {
+                // Kiểm tra nếu childNode là TextNode
+                if (childNode.nodeType === "text") {
+                    // Sử dụng type assertion để thông báo với TypeScript
+                    const textNode = childNode as TextNode; // Kiểu này chắc chắn là TextNode
+                    values.push(textNode.value); // Truy cập thuộc tính value
+                } else {
+                    // Gọi đệ quy cho các Node khác
+                    values = values.concat(extractValues(childNode));
+                }
+            });
+        }
+    
+        return values;
+    };
+    console.log(dataImportanInfor, 'dataImportanInfor');
+
+    const valueStandard = extractValues(
+        dataImportanInfor.quoteImportantNotesStandard,
+    );
+    const valueEvent = extractValues(dataImportanInfor.quoteImportantNotesTour);
+    console.log(valueEvent,'valueEvent');
+
     return (
         <ImportantInformationStyle>
             <div className="title">Important Notes</div>

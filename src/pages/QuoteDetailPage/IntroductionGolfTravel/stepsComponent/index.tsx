@@ -9,7 +9,7 @@ const StepComponent = () => {
                 <img alt="" className="iconWhy" src={icons.step01} />
                 <div className="nextStepTitle">Any questions?</div>
                 <div className="nextStepDiscription">
-                    Call me at 020 7336 5340 or{' '}
+                    Secure Quote Now for £200{' '}
                     <span className="link">request a callback.</span>
                 </div>
             </div>

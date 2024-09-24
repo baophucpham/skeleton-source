@@ -1,7 +1,6 @@
 import DashboardComponent from 'src/pages/Dashboard';
 import Login from 'src/pages/loginPage';
 import QuoteDetailPage from 'src/pages/QuoteDetailPage';
-import IntroductionGoflTravel from 'src/pages/QuoteDetailPage/IntroductionGolfTravel';
 
 const routes = [
     {
@@ -15,7 +14,7 @@ const routes = [
         main: () => <QuoteDetailPage />,
     },
     {
-        path: '/dashboard',
+        path: '/dashboard/:id',
         exact: true,
         main: () => <DashboardComponent />,
     },

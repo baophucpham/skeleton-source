@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { isAuthSelector } from 'src/redux/selectors/authenSelector';
 import {
     Redirect,
     Route,
@@ -19,24 +20,37 @@ import PricingAndBookingComponent from './PricingAndBooking';
 import ImportantInformationComponent from './ImportantInformation';
 import TermsAndCoditionsComponent from './TermsAndCoditions';
 import { Button, Popover } from 'antd';
-import { checkRole } from 'src/redux/actions/roleCheckAction';
+import { updateCheckRoleSuccess } from 'src/redux/actions/roleCheckAction';
+import { getDetailQuote } from 'src/api/apiGetDetailQuote';
 
 const QuoteDetailPage = () => {
     const [showRole, setShowRole] = useState<string>('Preview mode');
     const [roleBtn, setRoleBtn] = useState<string>('Edit');
     const dispatch = useDispatch();
+    const [data, setData] = useState<any>();
+
     const [childData, setChildData] = useState<any>({
         id: nameView.GOFL_TRAVEL_EXPERT,
         content: 'Introduction from your Golf Travel Expert',
     });
-    const location = useLocation();
-    const role = location?.state;
+    const location: any = useLocation();
+
+    const role: string = location?.state || '';
+
     useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await getDetailQuote();
+                setData(response?.fields);
+            } catch (err) {
+                setData(null);
+            }
+        };
+        fetchData();
         if (role) {
-            setShowRole(String(role));
-            dispatch(checkRole(role))
+            setShowRole(role);
         }
-    }, [role]);
+    }, [location?.state]);
 
     const handleChildDataChange = (data: string) => {
         setChildData(data);
@@ -44,7 +58,7 @@ const QuoteDetailPage = () => {
     const changeRoleEdit = () => {
         setShowRole('Edit mode');
         setRoleBtn('Save');
-        dispatch(checkRole('Edit mode'))
+        dispatch(updateCheckRoleSuccess('Edit mode'));
     };
     return (
         <Router>
@@ -133,7 +147,7 @@ const QuoteDetailPage = () => {
                                 </Route>
                                 <Route
                                     path="/quoteDetail/introduction"
-                                    component={IntroductionGoflTravel}
+                                    component={(props:any) => <IntroductionGoflTravel {...props} customProp={data} />}
                                 />
                                 <Route
                                     path="/quoteDetail/itineraryInDetail"
@@ -141,11 +155,11 @@ const QuoteDetailPage = () => {
                                 />
                                 <Route
                                     path="/quoteDetail/pricingAndBooking"
-                                    component={PricingAndBookingComponent}
+                                    component={(props:any)=><PricingAndBookingComponent {...props} dataReadyToBook={data}/>}
                                 />
                                 <Route
                                     path="/quoteDetail/importantInformation"
-                                    component={ImportantInformationComponent}
+                                    component={(props:any)=><ImportantInformationComponent {...props} dataImportanInfor={data}/>}
                                 />
                                 <Route
                                     path="/quoteDetail/termsAndCoditions"
